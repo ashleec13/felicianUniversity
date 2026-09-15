@@ -1,0 +1,118 @@
+:root {
+  --brand-green: #103B26;
+  --brand-gold: #E5C168;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--brand-green);
+  padding: 1rem 3rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* Gold Pill Buttons */
+.btn-gold {
+  background-color: var(--brand-gold);
+  color: #111;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Hero Section with Gradient Overlay */
+.hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+
+  background-image: 
+    linear-gradient(90deg,
+      rgba(16, 59, 38, 0.96) 0%,
+      rgba(16, 59, 38, 0.78) 42%,
+      rgba(16, 59, 38, 0.24) 78%,
+      rgba(16, 59, 38, 0.08) 100%
+    ),
+    url('hero.png');
+
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 1.8rem;
+  opacity: 0.9;
+}
+
+/* Bottom Banner */
+.location-banner {
+  background-color: var(--brand-green);
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+/* Hero headline, section titles, big stat numbers: 
+font-family: "ogg", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Body copy, paragraphs: 
+font-family: "aktiv-grotesk", sans-serif;
+font-weight: 200;
+font-style: normal;
+
+
+Nav, buttons, labels, eyebrows, stat captions:
+font-family: "spirits-neutral", serif;
+font-weight: 300;
+font-style: normal; */
