@@ -1,3 +1,7 @@
+/* ============================================================
+   GLOBAL / ROOT STYLES
+   Sets the site color palette and base page reset.
+   ============================================================ */
 :root {
   --brand-green: #103B26;
   --brand-gold: #E5C168;
@@ -10,7 +14,10 @@
   font-family: Arial, sans-serif;
 }
 
-/* Header Navbar */
+/* ============================================================
+   HEADER / NAVIGATION STYLES
+   Styles for the top navigation and logo area.
+   ============================================================ */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -32,7 +39,10 @@
   font-size: 0.95rem;
 }
 
-/* Gold Pill Buttons */
+/* ============================================================
+   BUTTON / CALL-TO-ACTION STYLES
+   Gold action buttons and other primary CTAs.
+   ============================================================ */
 .btn-gold {
   background-color: var(--brand-gold);
   color: #111;
@@ -44,7 +54,10 @@
   letter-spacing: 0.5px;
 }
 
-/* Hero Section with Gradient Overlay */
+/* ============================================================
+   HERO SECTION STYLES
+   Full-width banner with overlay and featured headline.
+   ============================================================ */
 .hero {
   position: relative;
   min-height: 75vh;
@@ -87,7 +100,10 @@
   opacity: 0.9;
 }
 
-/* Bottom Banner */
+/* ============================================================
+   LOCATION BANNER STYLES
+   This bar highlights campus info and quick location details.
+   ============================================================ */
 .location-banner {
   background-color: var(--brand-green);
   color: #fff;
@@ -98,9 +114,31 @@
   letter-spacing: 0.5px;
 }
 
+/* ============================================================
+   CONTENT SECTION STYLES
+   Add styles for Why Felician, Programs, Student Life, etc.
+   ============================================================ */
+.content-section {
+  padding: 4rem 10%;
+  background-color: #f8f8f8;
+}
 
+.content-section h2 {
+  font-size: 2.2rem;
+  color: var(--brand-green);
+  margin-bottom: 1rem;
+}
 
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
 
+/* ============================================================
+   TYPOGRAPHY NOTES
+   Suggested font pairing for headings, body text, and labels.
+   ============================================================ */
 /* Hero headline, section titles, big stat numbers: 
 font-family: "ogg", sans-serif;
 font-weight: 400;
@@ -110,7 +148,6 @@ Body copy, paragraphs:
 font-family: "aktiv-grotesk", sans-serif;
 font-weight: 200;
 font-style: normal;
-
 
 Nav, buttons, labels, eyebrows, stat captions:
 font-family: "spirits-neutral", serif;
