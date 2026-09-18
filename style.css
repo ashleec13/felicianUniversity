@@ -72,7 +72,7 @@
       rgba(16, 59, 38, 0.24) 78%,
       rgba(16, 59, 38, 0.08) 100%
     ),
-    url('hero.png');
+    url('pictures/hero.png');
 
   background-size: cover;
   background-position: center;
@@ -133,6 +133,52 @@
   font-size: 1rem;
   line-height: 1.7;
   color: #333;
+}
+
+.card {
+  max-width: 720px;
+  margin-top: 2rem;
+  border: 0;
+  box-shadow: 0 8px 24px rgba(16, 59, 38, 0.12);
+}
+
+.card-img-top {
+  height: 260px;
+  object-fit: cover;
+}
+
+.location-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+}
+
+.pill {
+  border: 2px solid var(--brand-green);
+  border-radius: 999px;
+  background-color: #fff;
+  color: var(--brand-green);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pill:hover,
+.pill:focus-visible,
+.pill.active {
+  background-color: var(--brand-green);
+  color: #fff;
+}
+
+.pill:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 2px;
+}
+
+#locationDescription {
+  margin-bottom: 0;
 }
 
 /* ============================================================

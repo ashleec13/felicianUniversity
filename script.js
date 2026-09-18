@@ -56,3 +56,35 @@ document.addEventListener("DOMContentLoaded", () => {
   initializePage();
   renderSectionCards();
 });
+
+
+const pills = document.querySelectorAll('.pill');
+const description = document.getElementById('locationDescription');
+const locationImage = document.getElementById('locationImage');
+
+pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+        const location = pill.dataset.location;
+
+    pills.forEach(button => button.classList.remove('active'));
+    pill.classList.add('active');
+    locationImage.src = pill.dataset.image;
+    locationImage.alt = pill.textContent.trim();
+
+        if (location === 'nyc') {
+            description.textContent = 
+                '<b>NYC Connection:</b> 20-minute direct transit to world-class internships & entertainment.';
+                
+        } 
+        
+        else if (location === 'mall') {
+            description.textContent = 
+                'American Dream: Just minutes away from premier dining, indoor skiing, retail, and entertainment.';
+        } 
+        
+        else if (location === 'sports') {
+            description.textContent = 
+                'MetLife Stadium is close by for NFL games, concerts, and other major events.';
+        }
+    });
+});
