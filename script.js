@@ -72,7 +72,7 @@ pills.forEach(pill => {
     locationImage.alt = pill.textContent.trim();
 
         if (location === 'nyc') {
-            description.textContent = 
+            description.innerHTML = 
                 '<b>NYC Connection:</b> 20-minute direct transit to world-class internships & entertainment.';
                 
         } 
