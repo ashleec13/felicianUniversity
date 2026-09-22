@@ -15,9 +15,32 @@
 }
 
 /* ============================================================
+   TYPOGRAPHY NOTES
+   Suggested font pairing for headings, body text, and labels.
+   ============================================================ */
+/* Hero headline, section titles, big stat numbers: 
+font-family: "bodoni-moda-variable", sans-serif;
+font-variation-settings: "opsz" 11, "wght" 400;
+
+subheaders:
+font-family: "montserrat", sans-serif;
+font-weight: 100;
+font-style: normal;
+
+Body copy, paragraphs: 
+font-family: "source-sans-3", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Nav, buttons, labels, eyebrows, stat captions:
+font-family: "josefin-sans", sans-serif;
+font-weight: 400;
+font-style: normal; */
+/* ============================================================
    HEADER / NAVIGATION STYLES
    Styles for the top navigation and logo area.
    ============================================================ */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -396,25 +419,10 @@
   }
 }
 
-/* ============================================================
-   TYPOGRAPHY NOTES
-   Suggested font pairing for headings, body text, and labels.
-   ============================================================ */
-/* Hero headline, section titles, big stat numbers: 
-font-family: "bodoni-moda-variable", sans-serif;
-font-variation-settings: "opsz" 11, "wght" 400;
+        .gallery-row {
+            height: 520px;
+        }
+        .card-overlay {
+            background: rgba(0, 0, 0, 0.35);
+        }
 
-subheaders:
-font-family: "montserrat", sans-serif;
-font-weight: 100;
-font-style: normal;
-
-Body copy, paragraphs: 
-font-family: "source-sans-3", sans-serif;
-font-weight: 300;
-font-style: normal;
-
-Nav, buttons, labels, eyebrows, stat captions:
-font-family: "josefin-sans", sans-serif;
-font-weight: 400;
-font-style: normal; */
