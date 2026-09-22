@@ -24,7 +24,7 @@
          This section controls the top menu and site navigation.
          ========================================================= -->
     <header class="navbar">
-        <div class="logo">FELICIAN</div>
+        <img src="pictures/logo.jpeg" width="120" height="auto" alt="Felician University logo">
         <nav class="nav-links" aria-label="Main navigation">
             <a href="#why-felician">Why Felician</a>
             <a href="#programs">Programs</a>
@@ -82,16 +82,139 @@
                     </p>
                 </div>
             </div>
-
+            <div class="stat">
+                <div class="stat-number" id="studentRatio">0:1</div>
+                <p>Student-to-Professor Ratio</p>
+            </div>
+            <div class="card text-start">
+                <div class="card-body">
+                    <h4 class="card-title">Opportunities</h4>
+                    <p class="card-text">1. Felician Campus: Hands-on learning & personal support <br>2. NYC Internships: Connect with internships at leading companies <br>3. Career Launch:Gain experience and prepare for your future 
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- =========================================================
              PROGRAMS SECTION
              Showcase academic majors, degrees, and career pathways.
              ========================================================= -->
-        <section id="programs" class="content-section">
-            <h2>Choose Your Flight</h2>
-            <p>Explore 60+ programs and find the one that fits your future — starting with four of the most popular.</p>
+        <section id="programs" class="programs-section">
+            <div class="programs-container">
+                <h2 style="text-align: center; font-size: 2.2rem; color: var(--brand-green); margin-bottom: 0.5rem;">Choose Your Flight</h2>
+                <p style="text-align: center; font-size: 1rem; color: #525e57; margin-bottom: 2.5rem;">Explore 60+ programs and find the one that fits your future — starting with four of the most popular.</p>
+
+                <!-- Navigation Tabs -->
+                <div class="tabs-nav" role="tablist">
+                    <button class="tab-btn active" data-tab="nursing" role="tab" aria-selected="true">Nursing</button>
+                    <button class="tab-btn" data-tab="cs" role="tab" aria-selected="false">Computer Science</button>
+                    <button class="tab-btn" data-tab="business" role="tab" aria-selected="false">Business</button>
+                    <button class="tab-btn" data-tab="psychology" role="tab" aria-selected="false">Psychology</button>
+                </div>
+
+                <!-- Tab Content Panels Wrapper -->
+                <div class="tab-content-wrapper">
+                    <!-- Panel 1: Nursing -->
+                    <div class="tab-panel active" id="nursing" role="tabpanel">
+                        <div class="panel-image-wrapper">
+                            <img src="https://picsum.photos/800/600?random=1" alt="Nursing lab student">
+                        </div>
+                        <div class="panel-info">
+                            <span class="school-tag">BS · School of Nursing</span>
+                            <h2 class="program-title">Nursing</h2>
+                            <p class="program-description">
+                                Hands-on clinical training from your first year, in labs built to feel like the hospital floor — not just the textbook.
+                            </p>
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <span class="stat-value">94%</span>
+                                    <span class="stat-label">NCLEX pass rate</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">12+</span>
+                                    <span class="stat-label">clinical partner sites</span>
+                                </div>
+                            </div>
+                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: Computer Science -->
+                    <div class="tab-panel" id="cs" role="tabpanel">
+                        <div class="panel-image-wrapper">
+                            <img src="https://picsum.photos/800/600?random=2" alt="Computer science coding">
+                        </div>
+                        <div class="panel-info">
+                            <span class="school-tag">BS · School of Arts & Sciences</span>
+                            <h2 class="program-title">Computer Science</h2>
+                            <p class="program-description">
+                                Build real software, not just study it — from your first intro course through a senior capstone with an actual client.
+                            </p>
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <span class="stat-value">1:1</span>
+                                    <span class="stat-label">faculty project mentoring</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">10mi</span>
+                                    <span class="stat-label">from NYC tech internships</span>
+                                </div>
+                            </div>
+                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Business -->
+                    <div class="tab-panel" id="business" role="tabpanel">
+                        <div class="panel-image-wrapper">
+                            <img src="https://picsum.photos/800/600?random=3" alt="Business students discussing project">
+                        </div>
+                        <div class="panel-info">
+                            <span class="school-tag">BS · School of Business</span>
+                            <h2 class="program-title">Business</h2>
+                            <p class="program-description">
+                                Concentrations in management, marketing, and finance — taught by faculty who've actually run the departments they teach.
+                            </p>
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <span class="stat-value">4</span>
+                                    <span class="stat-label">concentration tracks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">90%+</span>
+                                    <span class="stat-label">career placement within 1 yr</span>
+                                </div>
+                            </div>
+                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4: Psychology -->
+                    <div class="tab-panel" id="psychology" role="tabpanel">
+                        <div class="panel-image-wrapper">
+                            <img src="https://picsum.photos/800/600?random=4" alt="Psychology research lab">
+                        </div>
+                        <div class="panel-info">
+                            <span class="school-tag">BS · School of Arts & Sciences</span>
+                            <h2 class="program-title">Psychology</h2>
+                            <p class="program-description">
+                                Research-driven coursework with early access to faculty labs, plus clear pathways into counseling, clinical or grad-school tracks.
+                            </p>
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-label">research labs open to undergrads</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">15:1</span>
+                                    <span class="stat-label">ratio in every seminar</span>
+                                </div>
+                            </div>
+                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- =========================================================

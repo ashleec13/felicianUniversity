@@ -181,6 +181,221 @@
   margin-bottom: 0;
 }
 
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.stat p {
+    font-size: 18px;
+}
+
+/* ============================================================
+   ACADEMIC PROGRAM TABS SECTION
+   Tabs navigation, automatic image cropping, and non-jumpy 
+   smooth panel transitions.
+   ============================================================ */
+.programs-section {
+  background-color: #f7f5ed; /* Soft cream background matching design */
+  padding: 4.5rem 10%;
+}
+
+.programs-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Tabs Navigation Header */
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  border-bottom: 1px solid #e2dfd2;
+  margin-bottom: 3.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #525e57;
+  padding: 0.75rem 0.25rem 1rem 0.25rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.tab-btn:hover {
+  color: var(--brand-green);
+}
+
+.tab-btn.active {
+  color: var(--brand-green);
+  font-weight: 700;
+}
+
+/* Active Gold Underline Indicator */
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--brand-gold);
+  border-radius: 2px;
+}
+
+/* Stacked Grid Overlay to Prevent Page Jumps */
+.tab-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.tab-panel {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  pointer-events: none;
+}
+
+.tab-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Photo Wrapper & Automatic Image Cropping */
+.panel-image-wrapper {
+  width: 100%;
+  height: 380px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #e6e3d9;
+}
+
+.panel-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops photos seamlessly regardless of original size */
+  object-position: center;
+  display: block;
+}
+
+/* Text Content Column */
+.panel-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.school-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #c8981a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.program-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.program-description {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #525e57;
+  margin-bottom: 2rem;
+}
+
+/* Stats Section Grid */
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e2dfd2;
+  border-bottom: 1px solid #e2dfd2;
+  margin-bottom: 1.75rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--brand-green);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: #525e57;
+  line-height: 1.3;
+}
+
+/* CTA Arrow Link */
+.apply-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.apply-link:hover {
+  color: #c8981a;
+}
+
+.apply-link span {
+  margin-left: 0.4rem;
+  transition: transform 0.2s ease;
+}
+
+.apply-link:hover span {
+  transform: translateX(4px);
+}
+
+/* Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+  .tabs-nav {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .tab-panel {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .panel-image-wrapper {
+    height: 260px;
+  }
+}
+
 /* ============================================================
    TYPOGRAPHY NOTES
    Suggested font pairing for headings, body text, and labels.

@@ -88,3 +88,56 @@ pills.forEach(pill => {
         }
     });
 });
+
+const counter = document.getElementById("studentRatio");
+
+let started = false;
+
+const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !started) {
+        started = true;
+
+        let count = 0;
+        const target = 15;
+        const duration = 1800;
+        const stepTime = duration / target;
+
+        const countUp = setInterval(() => {
+            count++;
+            counter.textContent = count + ":1";
+
+            if (count === target) {
+                clearInterval(countUp);
+            }
+        }, stepTime);
+    }
+});
+
+observer.observe(counter);
+
+
+  const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+
+        // Update Nav Active State
+        tabButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+
+        // Update Panels Active State
+        tabPanels.forEach(panel => {
+          if (panel.id === targetTab) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      });
+    });
