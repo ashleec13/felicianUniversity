@@ -24,14 +24,14 @@
          This section controls the top menu and site navigation.
          ========================================================= -->
     <header class="navbar">
-        <img src="pictures/logo_main.svg" width="120" height="auto" alt="Felician University logo">
+        <img class="site-logo" src="pictures/logo_main.svg" alt="Felician University logo">
         <nav class="nav-links" aria-label="Main navigation">
             <a href="#why-felician">Why Felician</a>
             <a href="#programs">Programs</a>
             <a href="#student-life">Student Life</a>
             <a href="#campuses">Campuses</a>
             <a href="#admissions">Admissions</a>
-            <a href="https://felician.edu/contact-us/" target="_blank" class="btn-gold">Contact us</a>
+            <a href="https://felician.edu/contact-us/" target="_blank" rel="noopener noreferrer" class="btn-gold">Contact us</a>
         </nav>
     </header>
 
@@ -65,7 +65,7 @@
             <p>Students choose Felician for its supportive community, career-focused learning, and strong campus
                 culture.</p>
 
-            <div class="card text-start">
+            <div class="card text-start location-card">
                 <img id="locationImage" class="card-img-top" src="pictures/nycSkyline.jpg" alt="New York City skyline" />
                 <div class="card-body">
                     <h4 class="card-title">Suburban & City</h4>
@@ -82,11 +82,11 @@
                     </p>
                 </div>
             </div>
-            <div class="stat">
+            <div class="stat ratio-stat">
                 <div class="stat-number" id="studentRatio">0:1</div>
                 <p>Student-to-Professor Ratio</p>
             </div>
-            <div class="card text-start">
+            <div class="card text-start opportunities-card">
                 <div class="card-body">
                     <h4 class="card-title">Opportunities</h4>
                     <p class="card-text">1. Felician Campus: Hands-on learning & personal support <br>2. NYC Internships: Connect with internships at leading companies <br>3. Career Launch:Gain experience and prepare for your future 
@@ -101,21 +101,21 @@
              ========================================================= -->
         <section id="programs" class="programs-section">
             <div class="programs-container">
-                <h2 style="text-align: center; font-size: 2.2rem; color: var(--brand-green); margin-bottom: 0.5rem;">Choose Your Flight</h2>
-                <p style="text-align: center; font-size: 1rem; color: #525e57; margin-bottom: 2.5rem;">Explore 60+ programs and find the one that fits your future — starting with four of the most popular.</p>
+                <h2 class="programs-heading">Choose Your Flight</h2>
+                <p class="programs-intro">Explore 60+ programs and find the one that fits your future, starting with four of the most popular.</p>
 
                 <!-- Navigation Tabs -->
                 <div class="tabs-nav" role="tablist">
-                    <button class="tab-btn active" data-tab="nursing" role="tab" aria-selected="true">Nursing</button>
-                    <button class="tab-btn" data-tab="cs" role="tab" aria-selected="false">Computer Science</button>
-                    <button class="tab-btn" data-tab="business" role="tab" aria-selected="false">Business</button>
-                    <button class="tab-btn" data-tab="psychology" role="tab" aria-selected="false">Psychology</button>
+                    <button class="tab-btn active" id="nursing-tab" data-tab="nursing" role="tab" aria-controls="nursing" aria-selected="true">Nursing</button>
+                    <button class="tab-btn" id="cs-tab" data-tab="cs" role="tab" aria-controls="cs" aria-selected="false">Computer Science</button>
+                    <button class="tab-btn" id="business-tab" data-tab="business" role="tab" aria-controls="business" aria-selected="false">Business</button>
+                    <button class="tab-btn" id="psychology-tab" data-tab="psychology" role="tab" aria-controls="psychology" aria-selected="false">Psychology</button>
                 </div>
 
                 <!-- Tab Content Panels Wrapper -->
                 <div class="tab-content-wrapper">
                     <!-- Panel 1: Nursing -->
-                    <div class="tab-panel active" id="nursing" role="tabpanel">
+                    <div class="tab-panel active" id="nursing" role="tabpanel" aria-labelledby="nursing-tab">
                         <div class="panel-image-wrapper">
                             <img src="pictures/nursing.png" alt="Nursing lab student">
                         </div>
@@ -135,12 +135,12 @@
                                     <span class="stat-label">clinical partner sites</span>
                                 </div>
                             </div>
-                            <a href="https://felician.edu/academics/school-of-nursing/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-nursing/" target="_blank" rel="noopener noreferrer" class="apply-link">See how to apply <span aria-hidden="true">&rarr;</span></a>
                         </div>
                     </div>
 
                     <!-- Panel 2: Computer Science -->
-                    <div class="tab-panel" id="cs" role="tabpanel">
+                    <div class="tab-panel" id="cs" role="tabpanel" aria-labelledby="cs-tab">
                         <div class="panel-image-wrapper">
                             <img src="pictures/compSci.png" alt="Computer science coding">
                         </div>
@@ -160,12 +160,12 @@
                                     <span class="stat-label">from NYC tech internships</span>
                                 </div>
                             </div>
-                            <a href="https://felician.edu/academics/school-of-business/undergraduate-programs/computer-science/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-business/undergraduate-programs/computer-science/" target="_blank" rel="noopener noreferrer" class="apply-link">See how to apply <span aria-hidden="true">&rarr;</span></a>
                         </div>
                     </div>
 
                     <!-- Panel 3: Business -->
-                    <div class="tab-panel" id="business" role="tabpanel">
+                    <div class="tab-panel" id="business" role="tabpanel" aria-labelledby="business-tab">
                         <div class="panel-image-wrapper">
                             <img src="pictures/business.jpeg" alt="Business students discussing project">
                         </div>
@@ -185,12 +185,12 @@
                                     <span class="stat-label">career placement within 1 yr</span>
                                 </div>
                             </div>
-                            <a href="https://felician.edu/academics/school-of-business/undergraduate-programs/business-administration/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-business/undergraduate-programs/business-administration/" target="_blank" rel="noopener noreferrer" class="apply-link">See how to apply <span aria-hidden="true">&rarr;</span></a>
                         </div>
                     </div>
 
                     <!-- Panel 4: Psychology -->
-                    <div class="tab-panel" id="psychology" role="tabpanel">
+                    <div class="tab-panel" id="psychology" role="tabpanel" aria-labelledby="psychology-tab">
                         <div class="panel-image-wrapper">
                             <img src="pictures/psych.webp" alt="Psychology research lab">
                         </div>
@@ -210,7 +210,7 @@
                                     <span class="stat-label">ratio in every seminar</span>
                                 </div>
                             </div>
-                            <a href="https://felician.edu/academics/school-of-arts-and-science/undergraduate-programs/psychology/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-arts-and-science/undergraduate-programs/psychology/" target="_blank" rel="noopener noreferrer" class="apply-link">See how to apply <span aria-hidden="true">&rarr;</span></a>
                         </div>
                     </div>
                 </div>
@@ -221,12 +221,12 @@
              STUDENT LIFE SECTION
              Highlight campus life, athletics, clubs, and community events.
              ========================================================= -->
-        <section id="student-life" class="content-section">
+        <section id="student-life" class="content-section student-life-intro">
             <h2>Soar beyond the classroom.</h2>
             <p>Division II athletics, 40+ clubs, and a campus that's never quiet.</p>
         </section>
         
- <div class="container my-auto">
+ <div class="container my-auto student-life-gallery">
         <!-- Main Title -->
         <h1 class="text-center display-2 fw-bold mb-4 text-dark sketch-font">
             Soar Beyond the Classroom
@@ -321,15 +321,15 @@
       <div class="dashed-line"></div>
       <div class="shuttle-badge">🚌 SHUTTLE</div>
 
-      <div class="campus-point point-rutherford" onclick="switchCampus('rutherford')">
+      <button class="campus-point point-rutherford" type="button" data-campus="rutherford">
         <div class="dot-outer"><div class="dot-inner"></div></div>
         <div class="label"><strong>Rutherford Campus</strong> Historic & Walkable</div>
-      </div>
+      </button>
 
-      <div class="campus-point point-lodi" onclick="switchCampus('lodi')">
+      <button class="campus-point point-lodi" type="button" data-campus="lodi">
         <div class="label"><strong>Lodi Campus</strong> Modern Labs & Athletics</div>
         <div class="dot-outer"><div class="dot-inner"></div></div>
-      </div>
+      </button>
     </div>
 
     <!-- Description Box -->
@@ -343,13 +343,138 @@
 
         <!-- =========================================================
              ADMISSIONS SECTION
-             Include enrollment information, application steps, and support.
+             Interactive four-step overview for prospective students.
              ========================================================= -->
-        <section id="admissions" class="content-section">
-            <h2>Steps to Becoming a Falcon</h2>
-            <p>Learn about application requirements, financial aid, and the steps to becoming part of the Felician
-                community.</p>
-        </section>
+      <section id="admissions" class="admissions-section">
+  <div class="container py-4">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <span class="text-uppercase fw-bold tracking-wide small text-muted">Your flight starts here</span>
+      <h2 class="display-5 fw-bold mt-1">Four steps to becoming a Falcon</h2>
+      <p class="lead text-secondary">Click a step to see what happens, what it costs, and what's next.</p>
+    </div>
+
+    <!-- Interactive Shell Container -->
+    <div class="card border rounded-3 overflow-hidden shadow-sm">
+
+      <!-- Responsive Step Navigation (Stacks vertically on mobile, horizontal on medium+ screens) -->
+      <div class="nav nav-pills nav-justified flex-column flex-md-row adm-nav border-bottom" role="tablist">
+
+        <button class="nav-link active text-start rounded-0 p-4 border-bottom border-md-0 border-end" data-bs-toggle="tab" data-bs-target="#detail-0" type="button">
+          <div class="step-i font-monospace fw-bold small">01</div>
+          <h4 class="h5 fw-bold mb-0 mt-1">Apply</h4>
+        </button>
+
+        <button class="nav-link text-start rounded-0 p-4 border-bottom border-md-0 border-end" data-bs-toggle="tab" data-bs-target="#detail-1" type="button">
+          <div class="step-i font-monospace fw-bold small">02</div>
+          <h4 class="h5 fw-bold mb-0 mt-1">Explore Aid</h4>
+        </button>
+
+        <button class="nav-link text-start rounded-0 p-4 border-bottom border-md-0 border-end" data-bs-toggle="tab" data-bs-target="#detail-2" type="button">
+          <div class="step-i font-monospace fw-bold small">03</div>
+          <h4 class="h5 fw-bold mb-0 mt-1">Visit</h4>
+        </button>
+
+        <button class="nav-link text-start rounded-0 p-4 border-bottom border-md-0" data-bs-toggle="tab" data-bs-target="#detail-3" type="button">
+          <div class="step-i font-monospace fw-bold small">04</div>
+          <h4 class="h5 fw-bold mb-0 mt-1">Become a Falcon</h4>
+        </button>
+
+      </div>
+
+      <!-- Detail Panels -->
+      <div class="tab-content p-4 p-md-5 bg-white">
+
+        <!-- Step 1 Pane -->
+        <div class="tab-pane fade show active" id="detail-0" role="tabpanel">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-7">
+              <h3 class="h4 fw-bold mb-2">Submit your application</h3>
+              <p class="text-secondary mb-0">Felician is test-optional. Apply free online with your transcript and a short personal statement — most applicants hear back in about two weeks.</p>
+            </div>
+            <div class="col-12 col-md-5">
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Application fee</span>
+                <b class="text-success">$0</b>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Decision timeline</span>
+                <b class="text-success">~2 weeks</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 Pane -->
+        <div class="tab-pane fade" id="detail-1" role="tabpanel">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-7">
+              <h3 class="h4 fw-bold mb-2">See what it actually costs</h3>
+              <p class="text-secondary mb-0">Over 95% of Felician students receive financial aid. Merit scholarships are awarded automatically with your application — no extra form required.</p>
+            </div>
+            <div class="col-12 col-md-5">
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Annual tuition</span>
+                <b class="text-success">~$34,000</b>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Avg. institutional aid</span>
+                <b class="text-success">~$20,000</b>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Students receiving aid</span>
+                <b class="text-success">95%+</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 Pane -->
+        <div class="tab-pane fade" id="detail-2" role="tabpanel">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-7">
+              <h3 class="h4 fw-bold mb-2">Come see the nest</h3>
+              <p class="text-secondary mb-0">Walk both campuses, sit in on a class, and meet current students over lunch. Group visits and 1:1 tours run most weekdays.</p>
+            </div>
+            <div class="col-12 col-md-5">
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Tour length</span>
+                <b class="text-success">~90 min</b>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Includes both campuses</span>
+                <b class="text-success">Yes</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 Pane -->
+        <div class="tab-pane fade" id="detail-3" role="tabpanel">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-7">
+              <h3 class="h4 fw-bold mb-2">Confirm your spot</h3>
+              <p class="text-secondary mb-0">Submit your enrollment deposit, register for orientation, and pick your first-semester schedule with your advisor.</p>
+            </div>
+            <div class="col-12 col-md-5">
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Enrollment deposit</span>
+                <b class="text-success">$200</b>
+              </div>
+              <div class="d-flex justify-content-between border-bottom py-2 font-monospace">
+                <span>Orientation</span>
+                <b class="text-success">Included</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
     </main>
 
     <!-- =========================================================
@@ -358,6 +483,25 @@
          ========================================================= -->
     <footer>
         <!-- place footer here -->
+<section class="final-cta py-5 text-center text-white" id="apply">
+  <div class="container py-4">
+    <div class="cta-content mx-auto">
+      <h2 class="display-4 fw-bold mb-3">
+        TAKE <span class="text-warning">FLIGHT</span>
+      </h2>
+      <p class="lead mb-4 text-white-50">
+        Your next chapter starts here. Join the Golden Falcon family today.
+      </p>
+
+      <!-- Stacks vertically on mobile, switches to horizontal row on small screens and up -->
+      <div class="cta-actions d-flex flex-column flex-sm-row justify-content-center gap-3">
+        <a href="https://connect.felician.edu/portal/admissions" target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-lg fw-bold rounded-pill px-4">Apply Now</a>
+        <a href="https://felician.edu/admissions/campus-tours/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg rounded-pill px-4">Visit Campus</a>
+        <a href="https://felician.edu/contact-us/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg rounded-pill px-4">Request Info</a>
+      </div>
+    </div>
+  </div>
+</section>
     </footer>
 
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->

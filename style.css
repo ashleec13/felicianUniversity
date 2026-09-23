@@ -5,30 +5,61 @@
 :root {
   --brand-green: #103B26;
   --brand-gold: #E5C168;
+  --brand-cream: #f7f5ed;
+  --brand-light: #eef1e8;
+  --brand-ink: #212529;
+  --brand-muted: #525e57;
+  --brand-border: #e2dfd2;
+  --brand-lime: #79bf20;
+  --brand-amber: #c8981a;
+  --brand-white: #ffffff;
+  --font-display: "bodoni-moda-variable", Georgia, serif;
+  --font-heading: "montserrat", Arial, sans-serif;
+  --font-body: "source-sans-3", Arial, sans-serif;
+  --font-label: "josefin-sans", Arial, sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
+body {
+  background-color: var(--brand-cream);
+  color: var(--brand-ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
 
-subheaders:
-font-family: "montserrat", sans-serif;
-font-weight: 100;
-font-style: normal;
+/* Use the project font families consistently by content type. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
 
-Body copy, paragraphs: 
-font-family: "source-sans-3", sans-serif;
-font-weight: 300;
-font-style: normal;
+button,
+a,
+nav,
+.school-tag,
+.stat-label,
+.label,
+.btn,
+.pill {
+  font-family: var(--font-label);
+}
 
-Nav, buttons, labels, eyebrows, stat captions:
-font-family: "josefin-sans", sans-serif;
-font-weight: 400;
-font-style: normal; */
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
 /* ============================================================
    HEADER / NAVIGATION STYLES
    Styles for the top navigation and logo area.
@@ -39,8 +70,18 @@ font-style: normal; */
   justify-content: space-between;
   align-items: center;
   background-color: var(--brand-green);
-  padding: 1rem 3rem;
+  min-height: 76px;
+  padding: 1rem clamp(1.25rem, 5vw, 4.5rem);
   color: #fff;
+  box-shadow: 0 4px 20px rgba(16, 59, 38, 0.18);
+  position: relative;
+  z-index: 5;
+}
+
+.site-logo {
+  display: block;
+  width: 120px;
+  height: auto;
 }
 
 .nav-links {
@@ -53,6 +94,13 @@ font-style: normal; */
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--brand-gold);
+  transform: translateY(-2px);
 }
 
 /* ============================================================
@@ -68,6 +116,15 @@ font-style: normal; */
   font-weight: bold;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
+  box-shadow: 0 6px 14px rgba(229, 193, 104, 0.24);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  background-color: var(--brand-white);
+  color: var(--brand-green);
+  transform: translateY(-2px);
 }
 
 /* ============================================================
@@ -76,10 +133,10 @@ font-style: normal; */
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 75vh;
+  min-height: min(760px, calc(100svh - 76px));
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 10vw, 9rem);
 
   background-image: 
     linear-gradient(90deg,
@@ -98,19 +155,23 @@ font-style: normal; */
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 480px;
+  max-width: 600px;
   color: #fff;
 }
 
 .hero-content h1 {
-  font-size: 3.2rem;
+  color: var(--brand-gold);
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 7vw, 6rem);
+  line-height: 0.95;
   font-weight: 900;
   letter-spacing: 1px;
   margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.1rem;
+  max-width: 520px;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   line-height: 1.4;
   margin-bottom: 1.8rem;
   opacity: 0.9;
@@ -121,10 +182,11 @@ font-style: normal; */
    This bar highlights campus info and quick location details.
    ============================================================ */
 .location-banner {
-  background-color: var(--brand-green);
+  background-color: var(--brand-gold);
+  color: var(--brand-green);
   color: #fff;
   text-align: center;
-  padding: 0.75rem;
+  padding: 0.9rem 1rem;
   font-weight: bold;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
@@ -135,27 +197,32 @@ font-style: normal; */
    Add styles for Why Felician, Programs, Student Life, etc.
    ============================================================ */
 .content-section {
-  padding: 4rem 10%;
-  background-color: #f8f8f8;
+  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 8vw, 8rem);
+  background-color: var(--brand-light);
 }
 
 .content-section h2 {
   font-size: 2.2rem;
   color: var(--brand-green);
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
   margin-bottom: 1rem;
 }
 
 .content-section p {
   font-size: 1rem;
   line-height: 1.7;
-  color: #333;
+  color: var(--brand-ink);
 }
 
 .card {
-  max-width: 720px;
-  margin-top: 2rem;
+  max-width: none;
+  margin-top: 0;
   border: 0;
-  box-shadow: 0 8px 24px rgba(16, 59, 38, 0.12);
+  border-radius: 18px;
+  background-color: var(--brand-white);
+  box-shadow: 0 14px 32px rgba(16, 59, 38, 0.14);
+  overflow: hidden;
 }
 
 .card-img-top {
@@ -199,15 +266,23 @@ font-style: normal; */
 
 .stat {
   text-align: center;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background-color: var(--brand-green);
+  color: var(--brand-white);
+  box-shadow: 0 14px 32px rgba(16, 59, 38, 0.16);
 }
 
 .stat-number {
-  font-size: 50px;
+  color: var(--brand-gold);
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 5rem);
   font-weight: bold;
 }
 
 .stat p {
   font-size: 18px;
+  color: var(--brand-white);
 }
 
 /* ============================================================
@@ -216,8 +291,8 @@ font-style: normal; */
    smooth panel transitions.
    ============================================================ */
 .programs-section {
-  background-color: #f7f5ed; /* Soft cream background matching design */
-  padding: 4.5rem 10%;
+  background-color: var(--brand-cream);
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 8vw, 8rem);
 }
 
 .programs-container {
@@ -226,12 +301,27 @@ font-style: normal; */
   margin: 0 auto;
 }
 
+.programs-heading {
+  margin-bottom: 0.5rem;
+  color: var(--brand-green);
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+  text-align: center;
+}
+
+.programs-intro {
+  margin-bottom: 2.5rem;
+  color: var(--brand-muted);
+  font-size: 1rem;
+  text-align: center;
+}
+
 /* Tabs Navigation Header */
 .tabs-nav {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  border-bottom: 1px solid #e2dfd2;
+  border-bottom: 1px solid var(--brand-border);
   margin-bottom: 3.5rem;
 }
 
@@ -240,7 +330,7 @@ font-style: normal; */
   border: none;
   font-size: 1.05rem;
   font-weight: 600;
-  color: #525e57;
+  color: var(--brand-muted);
   padding: 0.75rem 0.25rem 1rem 0.25rem;
   cursor: pointer;
   position: relative;
@@ -337,7 +427,7 @@ font-style: normal; */
 .program-description {
   font-size: 1rem;
   line-height: 1.55;
-  color: #525e57;
+  color: var(--brand-muted);
   margin-bottom: 2rem;
 }
 
@@ -347,8 +437,8 @@ font-style: normal; */
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   padding: 1.25rem 0;
-  border-top: 1px solid #e2dfd2;
-  border-bottom: 1px solid #e2dfd2;
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
   margin-bottom: 1.75rem;
 }
 
@@ -367,7 +457,7 @@ font-style: normal; */
 
 .stat-label {
   font-size: 0.88rem;
-  color: #525e57;
+  color: var(--brand-muted);
   line-height: 1.3;
 }
 
@@ -397,6 +487,33 @@ font-style: normal; */
 
 /* Responsiveness for Smaller Screens */
 @media (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  .hero {
+    min-height: 65vh;
+    padding: 0 1.25rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.25rem, 12vw, 3.2rem);
+  }
+
+  .content-section,
+  .programs-section {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
   .tabs-nav {
     gap: 1.25rem;
     flex-wrap: wrap;
@@ -410,14 +527,40 @@ font-style: normal; */
   .panel-image-wrapper {
     height: 260px;
   }
+
+  .gallery-row {
+    height: auto;
+  }
+
+  .gallery-row > [class*="col-"] {
+    width: 100%;
+    height: 220px !important;
+  }
+
+  .campus-card {
+    margin-right: 1.25rem;
+    margin-left: 1.25rem;
+    padding: 1.5rem;
+  }
 }
 
-        .gallery-row {
-            height: 520px;
-        }
-        .card-overlay {
-            background: rgba(0, 0, 0, 0.35);
-        }
+/* Student-life image gallery keeps the existing collage layout. */
+.student-life-gallery {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.student-life-gallery .sketch-font {
+  font-family: var(--font-display);
+}
+
+.gallery-row {
+  height: 520px;
+}
+
+.card-overlay {
+  background: rgba(16, 59, 38, 0.35);
+}
 /* ============================================================
    CAMPUS SHUTTLE TOGGLE SECTION
    Interactive slider for switching Rutherford & Lodi campuses.
@@ -445,7 +588,7 @@ font-style: normal; */
 }
 
 .campus-card .header p {
-  color: #525e57;
+  color: var(--brand-muted);
   font-size: 0.9rem;
   margin-bottom: 2rem;
 }
@@ -496,6 +639,10 @@ font-style: normal; */
   align-items: center;
   gap: 0.5rem;
   user-select: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
 }
 
 .dot-outer {
@@ -520,7 +667,7 @@ font-style: normal; */
 
 .label {
   font-size: 0.85rem;
-  color: #525e57;
+  color: var(--brand-muted);
   white-space: nowrap;
 }
 
@@ -565,7 +712,7 @@ font-style: normal; */
 .details-box p {
   margin: 0;
   font-size: 0.85rem;
-  color: #525e57;
+  color: var(--brand-muted);
   line-height: 1.5;
 }
 
@@ -579,3 +726,331 @@ font-style: normal; */
   }
 }
 
+
+
+/* Admissions step navigation uses the same green and gold brand colors. */
+.adm-nav .nav-link {
+  background-color: #ffffff;
+  color: var(--brand-ink);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.adm-nav .nav-link .step-i {
+  color: var(--brand-gold);
+}
+
+.adm-nav .nav-link.active {
+  background-color: var(--brand-green) !important;
+  color: #ffffff !important;
+}
+
+.adm-nav .nav-link.active .step-i {
+  color: var(--brand-gold) !important;
+}
+
+.admissions-section {
+  background-color: var(--brand-light);
+  padding: 4rem 0;
+}
+
+
+/* ============================================================
+   FINAL CTA SECTION (Zero Media Queries)
+   ============================================================ */
+.final-cta {
+  background-color: var(--brand-green);
+  color: #ffffff;
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-content {
+  width: 100%;
+  max-width: 680px;
+}
+
+/* Fluid typography adjusts dynamically based on screen width */
+.cta-content h2 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+  opacity: 0.9;
+}
+
+/* Auto-wrapping flexbox layout eliminates media queries */
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-actions .btn {
+  flex: 1 1 180px; /* Expands to fill available space, wraps when screen is < 180px per button */
+  max-width: 240px;
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--brand-gold);
+}
+
+/* ============================================================
+   SECTION COMPOSITIONS
+   Each major band gets a distinct treatment while sharing the
+   same green, gold, cream, and light-green project palette.
+   ============================================================ */
+
+#why-felician {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(150px, 0.55fr) minmax(0, 1.15fr);
+  grid-template-areas:
+    "heading heading heading"
+    "intro intro intro"
+    "location ratio opportunities";
+  gap: 1.5rem;
+  align-items: stretch;
+  background-color: var(--brand-light);
+}
+
+#why-felician > h2 {
+  grid-area: heading;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#why-felician > p:first-of-type {
+  grid-area: intro;
+  max-width: 680px;
+  margin: 0 auto 1rem;
+  color: var(--brand-muted);
+  text-align: center;
+}
+
+#why-felician .location-card {
+  grid-area: location;
+}
+
+#why-felician .ratio-stat {
+  grid-area: ratio;
+  align-self: center;
+}
+
+#why-felician .opportunities-card {
+  grid-area: opportunities;
+  align-self: center;
+}
+
+#why-felician .card-title {
+  color: var(--brand-green);
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+}
+
+#why-felician .card-text {
+  color: var(--brand-muted);
+}
+
+#student-life {
+  background-color: var(--brand-green);
+  color: var(--brand-white);
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+#student-life h2 {
+  color: var(--brand-gold);
+}
+
+#student-life p {
+  color: var(--brand-white);
+  margin-bottom: 0;
+}
+
+.student-life-gallery {
+  max-width: 1440px;
+  background-color: var(--brand-cream);
+}
+
+.student-life-gallery h1 {
+  color: var(--brand-green) !important;
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+}
+
+.student-life-gallery .position-relative {
+  border: 3px solid var(--brand-white);
+  box-shadow: 0 12px 24px rgba(16, 59, 38, 0.18) !important;
+}
+
+#campuses {
+  background-color: var(--brand-gold);
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+#campuses h2 {
+  color: var(--brand-green);
+}
+
+#campuses p {
+  color: var(--brand-green);
+  margin-bottom: 0;
+}
+
+.campus-card {
+  max-width: 980px;
+  margin: 0 auto 4rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 6px solid var(--brand-gold);
+  border-radius: 24px;
+  background-color: var(--brand-green);
+  box-shadow: 0 18px 36px rgba(16, 59, 38, 0.2);
+  color: var(--brand-white);
+}
+
+.campus-card .header h2,
+.campus-card .header p,
+.campus-card .details-box h3,
+.campus-card .details-box p {
+  color: var(--brand-white);
+}
+
+.campus-card .header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.campus-card .header .highlight {
+  color: var(--brand-gold);
+}
+
+.campus-card .label,
+.campus-card .label strong {
+  color: var(--brand-white);
+}
+
+.campus-card .dot-outer {
+  border-color: var(--brand-gold);
+  background-color: var(--brand-green);
+}
+
+.campus-card .track-wrapper {
+  min-height: 72px;
+}
+
+.campus-card .details-box {
+  border-top: 1px solid rgba(229, 193, 104, 0.45);
+}
+
+.admissions-section {
+  padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.admissions-section > .container > .text-center h2 {
+  color: var(--brand-green);
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+}
+
+.admissions-section > .container > .text-center p {
+  color: var(--brand-muted) !important;
+}
+
+.admissions-section > .container > .card {
+  border: 0 !important;
+  border-radius: 22px !important;
+  background-color: var(--brand-green);
+  box-shadow: 0 18px 36px rgba(16, 59, 38, 0.18) !important;
+}
+
+.admissions-section .adm-nav {
+  background-color: var(--brand-green);
+}
+
+.admissions-section .adm-nav .nav-link {
+  background-color: transparent;
+  color: var(--brand-white);
+  border-color: rgba(229, 193, 104, 0.3) !important;
+}
+
+.admissions-section .adm-nav .nav-link.active,
+.admissions-section .adm-nav .nav-link:hover,
+.admissions-section .adm-nav .nav-link:focus-visible {
+  background-color: var(--brand-gold) !important;
+  color: var(--brand-green) !important;
+}
+
+.admissions-section .adm-nav .nav-link.active .step-i {
+  color: var(--brand-green) !important;
+}
+
+.admissions-section .tab-content {
+  background-color: var(--brand-cream) !important;
+}
+
+.admissions-section .tab-pane h3,
+.admissions-section .tab-pane b {
+  color: var(--brand-green);
+}
+
+.admissions-section .tab-pane p,
+.admissions-section .tab-pane span {
+  color: var(--brand-muted);
+}
+
+.final-cta {
+  border-top: 8px solid var(--brand-gold);
+}
+
+.final-cta h2 {
+  font-family: var(--font-display);
+}
+
+.final-cta .btn-warning {
+  background-color: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--brand-green);
+}
+
+@media (max-width: 900px) {
+  #why-felician {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "heading heading"
+      "intro intro"
+      "location ratio"
+      "opportunities opportunities";
+  }
+}
+
+@media (max-width: 600px) {
+  #why-felician {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #why-felician > h2,
+  #why-felician > p:first-of-type {
+    text-align: left;
+  }
+
+  .campus-card {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .campus-card .track-wrapper {
+    gap: 1rem;
+  }
+}
