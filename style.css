@@ -5,14 +5,14 @@
 :root {
   --brand-green: #103B26;
   --brand-gold: #E5C168;
-  --brand-cream: #f7f5ed;
-  --brand-light: #eef1e8;
-  --brand-ink: #212529;
-  --brand-muted: #525e57;
-  --brand-border: #e2dfd2;
+  --brand-cream: #d8c47a;
+  --brand-light: #234c36;
+  --brand-ink: #182a20;
+  --brand-muted: #294335;
+  --brand-border: #76652d;
   --brand-lime: #79bf20;
-  --brand-amber: #c8981a;
-  --brand-white: #f7f1dc;
+  --brand-amber: #72540d;
+  --brand-white: #f1dfae;
   --font-display: "bodoni-moda-variable", Georgia, serif;
   --font-heading: "montserrat", Arial, sans-serif;
   --font-body: "source-sans-3", Arial, sans-serif;
@@ -30,7 +30,8 @@ body {
   background-color: var(--brand-green);
   color: var(--brand-ink);
   font-family: var(--font-body);
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.55;
 }
 
 html {
@@ -105,47 +106,8 @@ a {
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.site-search {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  flex: 0 0 auto;
-}
-
-.site-search input {
-  width: 5.75rem;
-  min-height: 2.2rem;
-  padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(247, 241, 220, 0.5);
-  border-radius: 999px;
-  background: transparent;
-  color: #fff;
-  font: 0.8rem var(--font-label);
-}
-
-.site-search input::placeholder {
-  color: rgba(247, 241, 220, 0.8);
-}
-
-.site-search button {
-  min-height: 2.2rem;
-  padding: 0.35rem 0.65rem;
-  border: 1px solid var(--brand-gold);
-  border-radius: 999px;
-  background: var(--brand-gold);
-  color: var(--brand-green);
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.site-search input:focus-visible,
-.site-search button:focus-visible {
-  outline: 2px solid var(--brand-cream);
-  outline-offset: 2px;
 }
 
 .nav-links a:hover,
@@ -235,7 +197,6 @@ a {
 .location-banner {
   background-color: var(--brand-gold);
   color: var(--brand-green);
-  color: #fff;
   text-align: center;
   padding: 0.9rem 1rem;
   font-weight: bold;
@@ -262,7 +223,7 @@ a {
 }
 
 .content-section p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--brand-ink);
 }
@@ -300,7 +261,7 @@ a {
 .pill {
   border: 2px solid var(--brand-green);
   border-radius: 999px;
-  background-color: var(--brand-cream);
+  background-color: var(--brand-white);
   color: var(--brand-green);
   cursor: pointer;
   font-weight: 700;
@@ -316,7 +277,7 @@ a {
 }
 
 .pill:focus-visible {
-  outline: 3px solid var(--brand-gold);
+  outline: 3px solid var(--brand-white);
   outline-offset: 2px;
 }
 
@@ -405,14 +366,14 @@ a {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  border-bottom: 1px solid var(--brand-border);
+  border-bottom: 2px solid var(--brand-green);
   margin-bottom: 2.25rem;
 }
 
 .tab-btn {
   background: none;
   border: none;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 600;
   color: var(--brand-muted);
   padding: 0.75rem 0.25rem 1rem 0.25rem;
@@ -423,12 +384,18 @@ a {
 
 .tab-btn:hover {
   color: var(--brand-green);
+  background-color: rgba(16, 59, 38, 0.1);
+}
+
+.tab-btn:focus-visible {
+  outline: 3px solid var(--brand-green);
+  outline-offset: 3px;
 }
 
 .tab-btn.active {
   color: var(--brand-green);
   font-weight: 700;
-  background-color: rgba(229, 193, 104, 0.16);
+  background-color: rgba(16, 59, 38, 0.13);
 }
 
 /* Active Gold Underline Indicator */
@@ -439,7 +406,7 @@ a {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: var(--brand-gold);
+  background-color: var(--brand-green);
   border-radius: 2px;
 }
 
@@ -495,7 +462,7 @@ a {
 .school-tag {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #c8981a;
+  color: var(--brand-amber);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.5rem;
@@ -510,7 +477,7 @@ a {
 }
 
 .program-description {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.55;
   color: var(--brand-muted);
   margin-bottom: 1.5rem;
@@ -522,8 +489,8 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   padding: 1.25rem 0;
-  border-top: 1px solid var(--brand-border);
-  border-bottom: 1px solid var(--brand-border);
+  border-top: 2px solid rgba(16, 59, 38, 0.38);
+  border-bottom: 2px solid rgba(16, 59, 38, 0.38);
   margin-bottom: 1.75rem;
 }
 
@@ -541,7 +508,7 @@ a {
 }
 
 .stat-label {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--brand-muted);
   line-height: 1.3;
 }
@@ -550,7 +517,7 @@ a {
 .apply-link {
   display: inline-flex;
   align-items: center;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--brand-green);
   text-decoration: none;
@@ -558,7 +525,9 @@ a {
 }
 
 .apply-link:hover {
-  color: #c8981a;
+  color: var(--brand-amber);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .apply-link span {
@@ -698,7 +667,7 @@ a {
   top: 9px;
   left: 30px;
   right: 30px;
-  border-top: 2px dashed #d0d0d0;
+  border-top: 2px dashed rgba(229, 193, 104, 0.8);
   z-index: 1;
 }
 
@@ -733,6 +702,12 @@ a {
   background: transparent;
   color: inherit;
   text-align: left;
+}
+
+.campus-point:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 4px;
+  border-radius: 6px;
 }
 
 .dot-outer {
@@ -852,35 +827,9 @@ a {
   text-transform: uppercase;
 }
 
-.news-filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.45rem;
-}
-
-.news-filter {
-  padding: 0.45rem 0.8rem;
-  border: 1px solid var(--brand-border);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--brand-muted);
-  cursor: pointer;
-  font: 700 0.78rem var(--font-label);
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.news-filter:hover,
-.news-filter.active,
-.news-filter:focus-visible {
-  background: var(--brand-green);
-  color: var(--brand-white);
-  transform: translateY(-2px);
-}
-
 .news-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   max-width: 1120px;
   min-height: 390px;
@@ -942,30 +891,28 @@ a {
 }
 
 .news-list {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 1rem;
+  display: contents;
 }
 
 .news-item {
   display: grid;
-  grid-template-columns: 38% 1fr;
-  min-height: 0;
+  grid-template-rows: 190px 1fr;
+  min-height: 390px;
 }
 
 .news-item img {
   width: 100%;
   height: 100%;
-  min-height: 170px;
   object-fit: cover;
 }
 
 .news-item > div {
   padding: 1.25rem;
+  color: var(--brand-white);
 }
 
 .news-tag {
-  color: var(--brand-amber);
+  color: var(--brand-gold);
   font: 700 0.72rem var(--font-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1007,9 +954,22 @@ a {
 }
 
 .testimonial-section cite {
-  color: rgba(247, 241, 220, 0.7);
-  font: 0.8rem var(--font-label);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--brand-gold);
+  font: 0.9rem var(--font-label);
   font-style: normal;
+}
+
+.testimonial-section cite strong {
+  color: var(--brand-gold);
+  font: 700 1.15rem var(--font-heading);
+}
+
+.testimonial-section cite span {
+  color: rgba(241, 223, 174, 0.76);
+  font-size: 0.82rem;
 }
 
 .site-footer {
@@ -1027,14 +987,18 @@ a {
   filter: brightness(0) invert(1);
 }
 
+.footer-logo-link {
+  display: inline-block;
+}
+
 .footer-intro p,
 .footer-column span,
 .footer-column a {
   display: block;
   max-width: 240px;
   margin-bottom: 0.55rem;
-  color: rgba(247, 241, 220, 0.72);
-  font-size: 0.88rem;
+  color: rgba(241, 223, 174, 0.84);
+  font-size: 0.95rem;
   text-decoration: none;
 }
 
@@ -1058,27 +1022,14 @@ a {
   gap: 1rem;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(229, 193, 104, 0.25);
-  color: rgba(247, 241, 220, 0.58);
-  font-size: 0.78rem;
+  color: rgba(241, 223, 174, 0.7);
+  font-size: 0.84rem;
 }
 
 @media (max-width: 900px) {
-  .site-search {
-    order: 3;
-    width: 100%;
-  }
-
-  .site-search input {
-    flex: 1;
-  }
-
   .section-heading-row {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .news-filters {
-    justify-content: flex-start;
   }
 
   .site-footer {
@@ -1226,6 +1177,14 @@ a {
 }
 
 #why-felician > h2 {
+  color: var(--brand-gold);
+}
+
+#why-felician > p:first-of-type {
+  color: var(--brand-white);
+}
+
+#why-felician > h2 {
   grid-area: heading;
   margin-bottom: 0;
   text-align: center;
@@ -1235,7 +1194,7 @@ a {
   grid-area: intro;
   max-width: 680px;
   margin: 0 auto 1rem;
-  color: var(--brand-muted);
+  color: var(--brand-white);
   text-align: center;
 }
 
@@ -1276,6 +1235,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 1rem;
 }
 
 #why-felician .location-card .card-img-top {
@@ -1285,9 +1245,17 @@ a {
   object-fit: cover;
 }
 
+#why-felician .opportunities-card .card-img-top {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
 #why-felician .opportunities-card .card-text {
   margin-bottom: 0;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 #why-felician .card-title {
@@ -1319,7 +1287,7 @@ a {
 
 .student-life-gallery {
   max-width: 1440px;
-  background-color: var(--brand-light);
+  background-color: #173f2b;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: clamp(1.25rem, 6vw, 6rem);
@@ -1327,7 +1295,7 @@ a {
 }
 
 .student-life-gallery h1 {
-  color: var(--brand-green) !important;
+  color: var(--brand-gold) !important;
   font-family: var(--font-display);
   font-size: clamp(2.3rem, 5vw, 4rem);
 }
@@ -1399,6 +1367,7 @@ a {
 }
 
 .admissions-section {
+  background-color: #173f2b;
   padding: clamp(2.5rem, 5vw, 4.5rem) 0;
 }
 
@@ -1407,7 +1376,7 @@ a {
 }
 
 .admissions-section > .container > .text-center h2 {
-  color: var(--brand-green);
+  color: var(--brand-gold);
   font-family: var(--font-display);
   font-size: clamp(2.3rem, 5vw, 4rem);
   font-weight: 800;
@@ -1418,7 +1387,11 @@ a {
 }
 
 .admissions-section > .container > .text-center p {
-  color: var(--brand-muted) !important;
+  color: var(--brand-white) !important;
+}
+
+.admissions-section > .container > .text-center > span {
+  color: var(--brand-white) !important;
 }
 
 .admissions-section > .container > .card {
@@ -1451,6 +1424,10 @@ a {
 
 .admissions-section .tab-content {
   background-color: var(--brand-cream) !important;
+}
+
+.admissions-section .tab-content .border-bottom {
+  border-color: rgba(16, 59, 38, 0.35) !important;
 }
 
 .admissions-section .tab-pane h3,
@@ -1490,6 +1467,14 @@ a {
 }
 
 @media (max-width: 600px) {
+  .news-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .news-item {
+    min-height: 0;
+  }
+
   #why-felician {
     display: flex;
     flex-direction: column;

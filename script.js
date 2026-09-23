@@ -138,48 +138,6 @@ function initializeCampusSwitcher() {
   });
 }
 
-// Search visible page copy and move focus to the first matching section.
-function initializeSiteSearch() {
-  const form = document.getElementById("siteSearch");
-  const input = document.getElementById("siteSearchInput");
-  const status = document.getElementById("searchStatus");
-  if (!form || !input || !status) return;
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const query = input.value.trim().toLowerCase();
-    if (!query) return;
-
-    const searchableContent = document.querySelectorAll("main h1, main h2, main h3, main p");
-    const match = [...searchableContent].find((element) => element.textContent.toLowerCase().includes(query));
-    if (match) {
-      match.scrollIntoView({ behavior: "smooth", block: "center" });
-      status.textContent = `Found ${query}.`;
-      input.removeAttribute("aria-invalid");
-    } else {
-      status.textContent = `No results found for ${query}.`;
-      input.setAttribute("aria-invalid", "true");
-    }
-  });
-}
-
-// Filter the editorial cards without changing their reserved grid dimensions.
-function initializeNewsFilters() {
-  const buttons = document.querySelectorAll("[data-news-filter]");
-  const cards = document.querySelectorAll("[data-news-category]");
-  if (!buttons.length || !cards.length) return;
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const filter = button.dataset.newsFilter;
-      buttons.forEach((item) => item.classList.toggle("active", item === button));
-      cards.forEach((card) => {
-        card.hidden = filter !== "all" && card.dataset.newsCategory !== filter;
-      });
-    });
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize each independent interaction after all page markup is available.
   initializeNavigation();
@@ -187,6 +145,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeRatioCounter();
   initializeProgramTabs();
   initializeCampusSwitcher();
-  initializeSiteSearch();
-  initializeNewsFilters();
 });

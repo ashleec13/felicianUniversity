@@ -34,12 +34,6 @@
             <a href="#admissions">Admissions</a>
             <a href="https://felician.edu/contact-us/" target="_blank" rel="noopener noreferrer" class="btn-gold">Contact us</a>
         </nav>
-      <form class="site-search" id="siteSearch" role="search">
-        <label class="visually-hidden" for="siteSearchInput">Search this page</label>
-        <input id="siteSearchInput" type="search" placeholder="Search" autocomplete="off">
-        <button type="submit" aria-label="Search this page">Go</button>
-        <output id="searchStatus" class="visually-hidden" aria-live="polite"></output>
-      </form>
     </header>
 
     <main>
@@ -97,6 +91,7 @@
               <p>STUDENT TO PROFESSOR</p>
             </div>
             <div class="card text-start opportunities-card">
+              <img class="card-img-top" src="pictures/opportunities.jpg" alt="Students collaborating on an opportunity">
                 <div class="card-body">
                     <h4 class="card-title">Opportunities</h4>
                     <p class="card-text">1. Felician Campus: Hands-on learning & personal support <br>2. NYC Internships: Connect with internships at leading companies <br>3. Career Launch:Gain experience and prepare for your future 
@@ -229,7 +224,7 @@
 
         <!-- =========================================================
            CAMPUS NEWS SECTION
-           A filterable editorial strip for campus moments and updates.
+           An editorial strip for campus moments and updates.
            ========================================================= -->
         <section id="campus-news" class="campus-news-section">
           <div class="section-heading-row">
@@ -237,16 +232,10 @@
               <p class="eyebrow">Around the nest</p>
               <h2>Campus Life, In Motion</h2>
             </div>
-            <div class="news-filters" role="group" aria-label="Filter campus updates">
-              <button class="news-filter active" type="button" data-news-filter="all">All</button>
-              <button class="news-filter" type="button" data-news-filter="events">Events</button>
-              <button class="news-filter" type="button" data-news-filter="student-life">Student life</button>
-              <button class="news-filter" type="button" data-news-filter="highlights">Highlights</button>
-            </div>
           </div>
 
           <div class="news-layout">
-            <article class="news-feature" data-news-category="events">
+            <article class="news-feature">
               <img src="pictures/events.jpg" alt="Students gathered for a campus event">
               <div class="news-copy">
                 <span class="news-tag">Events</span>
@@ -255,7 +244,7 @@
               </div>
             </article>
             <div class="news-list">
-              <article class="news-item" data-news-category="student-life">
+              <article class="news-item">
                 <img src="pictures/clubs.avif" alt="Students participating in a club">
                 <div>
                   <span class="news-tag">Student life</span>
@@ -263,7 +252,7 @@
                   <p>Clubs, games, and shared interests make a close-knit campus feel like home.</p>
                 </div>
               </article>
-              <article class="news-item" data-news-category="highlights">
+              <article class="news-item">
                 <img src="pictures/nursing.png" alt="Student working in a nursing lab">
                 <div>
                   <span class="news-tag">Highlights</span>
@@ -277,7 +266,7 @@
 
         <!-- =========================================================
            STUDENT TESTIMONIAL SECTION
-           Placeholder copy is labeled so it can be replaced with an approved quote.
+           A student perspective on continuing education at Felician.
            ========================================================= -->
         <section class="testimonial-section" aria-labelledby="testimonial-title">
           <div class="testimonial-mark" aria-hidden="true">&ldquo;</div>
@@ -285,8 +274,8 @@
             <p class="eyebrow">Student voice</p>
             <h2 id="testimonial-title">A place to be known.</h2>
             <blockquote>
-              <p>[Placeholder testimonial: replace with an approved student or alumni quote.]</p>
-              <cite>[Student name and program placeholder]</cite>
+              <p>"When I finished my bachelor's degree in psychology, I knew I wanted to continue my education. When searching for a master's program that fits me, I found myself struggling on what would be best for my future. I saw Felician University offered field experiences and placement support."</p>
+              <cite><strong>Kyle Coban</strong><span>Masters in Counseling Psychology - current MACP student</span></cite>
             </blockquote>
           </div>
         </section>
@@ -571,7 +560,9 @@
 </section>
     <div class="site-footer">
       <div class="footer-intro">
-        <img class="footer-logo" src="pictures/logo_main.svg" alt="Felician University logo">
+        <a class="footer-logo-link" href="index.html" aria-label="Felician University homepage">
+          <img class="footer-logo" src="pictures/logo_main.svg" alt="Felician University logo">
+        </a>
         <p>Close-knit community. Career-focused learning. A short trip from New York City.</p>
       </div>
       <div class="footer-column">
@@ -586,17 +577,17 @@
         <a href="https://felician.edu/contact-us/" target="_blank" rel="noopener noreferrer">Contact Felician</a>
         <a href="https://connect.felician.edu/portal/admissions" target="_blank" rel="noopener noreferrer">Student portal</a>
         <a href="https://felician.edu/admissions/campus-tours/" target="_blank" rel="noopener noreferrer">Visit campus</a>
-        <span>Phone: [add official number]</span>
+        <span>Phone: (201) 355-1465</span>
       </div>
       <div class="footer-column">
         <h2>Find Us</h2>
         <span>Rutherford and Lodi, NJ</span>
         <span>10 miles from NYC</span>
-        <span>Address: [add official campus address]</span>
-        <span>Social links: [add official accounts]</span>
+        <span>Address: 1 Felician Way, Rutherford, NJ 07070</span>
+        <span>Social links: @Felician_University</span>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Felician University</span>
+        <span>Ashlee Chen 2026</span>
         <span>Golden Falcon family</span>
       </div>
     </div>
