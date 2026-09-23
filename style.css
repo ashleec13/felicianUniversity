@@ -14,13 +14,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* ============================================================
-   TYPOGRAPHY NOTES
-   Suggested font pairing for headings, body text, and labels.
-   ============================================================ */
-/* Hero headline, section titles, big stat numbers: 
-font-family: "bodoni-moda-variable", sans-serif;
-font-variation-settings: "opsz" 11, "wght" 400;
 
 subheaders:
 font-family: "montserrat", sans-serif;
@@ -205,16 +198,16 @@ font-style: normal; */
 }
 
 .stat {
-    text-align: center;
+  text-align: center;
 }
 
 .stat-number {
-    font-size: 50px;
-    font-weight: bold;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .stat p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 /* ============================================================
@@ -425,4 +418,164 @@ font-style: normal; */
         .card-overlay {
             background: rgba(0, 0, 0, 0.35);
         }
+/* ============================================================
+   CAMPUS SHUTTLE TOGGLE SECTION
+   Interactive slider for switching Rutherford & Lodi campuses.
+   ============================================================ */
+.campus-card {
+  max-width: 820px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(16, 59, 38, 0.08);
+  text-align: center;
+}
+
+.campus-card .header h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  color: var(--brand-green);
+}
+
+.campus-card .header .highlight {
+  color: #79bf20;
+}
+
+.campus-card .header p {
+  color: #525e57;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* Interactive Timeline Track */
+.track-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.dashed-line {
+  position: absolute;
+  top: 9px;
+  left: 30px;
+  right: 30px;
+  border-top: 2px dashed #d0d0d0;
+  z-index: 1;
+}
+
+/* Shuttle Badge */
+.shuttle-badge {
+  position: absolute;
+  top: -7px;
+  z-index: 3;
+  background: var(--brand-gold);
+  color: #111;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+/* Campus Point Buttons */
+.campus-point {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.dot-outer {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: #525e57;
+  white-space: nowrap;
+}
+
+.label strong {
+  color: #111;
+  font-weight: 700;
+}
+
+/* Dynamic State Styles */
+.track-wrapper[data-active="rutherford"] .shuttle-badge {
+  left: 38%;
+}
+
+.track-wrapper[data-active="lodi"] .shuttle-badge {
+  left: 62%;
+}
+
+.track-wrapper[data-active="rutherford"] .point-rutherford .dot-outer,
+.track-wrapper[data-active="lodi"] .point-lodi .dot-outer {
+  border-color: var(--brand-green);
+}
+
+.track-wrapper[data-active="rutherford"] .point-rutherford .dot-inner,
+.track-wrapper[data-active="lodi"] .point-lodi .dot-inner {
+  background-color: var(--brand-green);
+}
+
+/* Content Box */
+.details-box {
+  text-align: left;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+.details-box h3 {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.details-box p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #525e57;
+  line-height: 1.5;
+}
+
+/* Shuttle Track Mobile Responsiveness */
+@media (max-width: 600px) {
+  .track-wrapper[data-active="rutherford"] .shuttle-badge {
+    left: 45%;
+  }
+  .track-wrapper[data-active="lodi"] .shuttle-badge {
+    left: 55%;
+  }
+}
 

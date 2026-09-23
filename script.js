@@ -141,3 +141,20 @@ observer.observe(counter);
         });
       });
     });
+
+    const campusData = {
+      rutherford: {
+        title: "Rutherford Campus",
+        desc: "Featuring classic historic architecture, traditional residence halls, central student dining, and tree-lined streets within walking distance to shops."
+      },
+      lodi: {
+        title: "Lodi Campus",
+        desc: "Home to advanced healthcare simulation labs, modern science centers, student athletic facilities, and specialized academic centers."
+      }
+    };
+
+    function switchCampus(campus) {
+      document.getElementById('campusTrack').setAttribute('data-active', campus);
+      document.getElementById('campusTitle').textContent = campusData[campus].title;
+      document.getElementById('campusDesc').textContent = campusData[campus].desc;
+    }

@@ -117,7 +117,7 @@
                     <!-- Panel 1: Nursing -->
                     <div class="tab-panel active" id="nursing" role="tabpanel">
                         <div class="panel-image-wrapper">
-                            <img src="https://picsum.photos/800/600?random=1" alt="Nursing lab student">
+                            <img src="pictures/nursing.png" alt="Nursing lab student">
                         </div>
                         <div class="panel-info">
                             <span class="school-tag">BS · School of Nursing</span>
@@ -135,14 +135,14 @@
                                     <span class="stat-label">clinical partner sites</span>
                                 </div>
                             </div>
-                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-nursing/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
                         </div>
                     </div>
 
                     <!-- Panel 2: Computer Science -->
                     <div class="tab-panel" id="cs" role="tabpanel">
                         <div class="panel-image-wrapper">
-                            <img src="https://picsum.photos/800/600?random=2" alt="Computer science coding">
+                            <img src="pictures/compSci.png" alt="Computer science coding">
                         </div>
                         <div class="panel-info">
                             <span class="school-tag">BS · School of Arts & Sciences</span>
@@ -160,14 +160,14 @@
                                     <span class="stat-label">from NYC tech internships</span>
                                 </div>
                             </div>
-                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-business/undergraduate-programs/computer-science/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
                         </div>
                     </div>
 
                     <!-- Panel 3: Business -->
                     <div class="tab-panel" id="business" role="tabpanel">
                         <div class="panel-image-wrapper">
-                            <img src="https://picsum.photos/800/600?random=3" alt="Business students discussing project">
+                            <img src="pictures/business.jpeg" alt="Business students discussing project">
                         </div>
                         <div class="panel-info">
                             <span class="school-tag">BS · School of Business</span>
@@ -185,14 +185,14 @@
                                     <span class="stat-label">career placement within 1 yr</span>
                                 </div>
                             </div>
-                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-business/undergraduate-programs/business-administration/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
                         </div>
                     </div>
 
                     <!-- Panel 4: Psychology -->
                     <div class="tab-panel" id="psychology" role="tabpanel">
                         <div class="panel-image-wrapper">
-                            <img src="https://picsum.photos/800/600?random=4" alt="Psychology research lab">
+                            <img src="pictures/psych.webp" alt="Psychology research lab">
                         </div>
                         <div class="panel-info">
                             <span class="school-tag">BS · School of Arts & Sciences</span>
@@ -210,7 +210,7 @@
                                     <span class="stat-label">ratio in every seminar</span>
                                 </div>
                             </div>
-                            <a href="#" class="apply-link">See how to apply <span>&rarr;</span></a>
+                            <a href="https://felician.edu/academics/school-of-arts-and-science/undergraduate-programs/psychology/" target="_blank" class="apply-link">See how to apply <span>&rarr;</span></a>
                         </div>
                     </div>
                 </div>
@@ -310,6 +310,36 @@
             <h2>Two Wings. One Nest.</h2>
             <p>Two campuses, one shuttle line, zero hassle. Pick a campus to explore it.</p>
         </section>
+        <div class="campus-card">
+    <div class="header">
+      <h2>TWO WINGS. <span class="highlight">ONE NEST.</span></h2>
+      <p>Two distinct campuses. One unified community. Connected by free shuttle.</p>
+    </div>
+
+    <!-- Switcher Bar -->
+    <div class="track-wrapper" id="campusTrack" data-active="rutherford">
+      <div class="dashed-line"></div>
+      <div class="shuttle-badge">🚌 SHUTTLE</div>
+
+      <div class="campus-point point-rutherford" onclick="switchCampus('rutherford')">
+        <div class="dot-outer"><div class="dot-inner"></div></div>
+        <div class="label"><strong>Rutherford Campus</strong> Historic & Walkable</div>
+      </div>
+
+      <div class="campus-point point-lodi" onclick="switchCampus('lodi')">
+        <div class="label"><strong>Lodi Campus</strong> Modern Labs & Athletics</div>
+        <div class="dot-outer"><div class="dot-inner"></div></div>
+      </div>
+    </div>
+
+    <!-- Description Box -->
+    <div class="details-box">
+      <h3 id="campusTitle">Rutherford Campus</h3>
+      <p id="campusDesc">
+        Featuring classic historic architecture, traditional residence halls, central student dining, and tree-lined streets within walking distance to shops.
+      </p>
+    </div>
+  </div>
 
         <!-- =========================================================
              ADMISSIONS SECTION
