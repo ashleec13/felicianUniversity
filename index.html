@@ -23,16 +23,23 @@
          HEADER / NAVIGATION
          This section controls the top menu and site navigation.
          ========================================================= -->
-    <header class="navbar">
+    <header class="navbar" id="site-header">
         <img class="site-logo" src="pictures/logo_main.svg" alt="Felician University logo">
         <nav class="nav-links" aria-label="Main navigation">
             <a href="#why-felician">Why Felician</a>
             <a href="#programs">Programs</a>
+        <a href="#campus-news">News</a>
             <a href="#student-life">Student Life</a>
             <a href="#campuses">Campuses</a>
             <a href="#admissions">Admissions</a>
             <a href="https://felician.edu/contact-us/" target="_blank" rel="noopener noreferrer" class="btn-gold">Contact us</a>
         </nav>
+      <form class="site-search" id="siteSearch" role="search">
+        <label class="visually-hidden" for="siteSearchInput">Search this page</label>
+        <input id="siteSearchInput" type="search" placeholder="Search" autocomplete="off">
+        <button type="submit" aria-label="Search this page">Go</button>
+        <output id="searchStatus" class="visually-hidden" aria-live="polite"></output>
+      </form>
     </header>
 
     <main>
@@ -83,8 +90,11 @@
                 </div>
             </div>
             <div class="stat ratio-stat">
-                <div class="stat-number" id="studentRatio">0:1</div>
-                <p>Student-to-Professor Ratio</p>
+              <div class="stat-number" id="studentRatio" aria-label="15 to 1 student-to-professor ratio">
+                <span id="ratioStudents">15</span>
+                <span class="ratio-divider">:1</span>
+              </div>
+              <p>STUDENT TO PROFESSOR</p>
             </div>
             <div class="card text-start opportunities-card">
                 <div class="card-body">
@@ -215,6 +225,70 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- =========================================================
+           CAMPUS NEWS SECTION
+           A filterable editorial strip for campus moments and updates.
+           ========================================================= -->
+        <section id="campus-news" class="campus-news-section">
+          <div class="section-heading-row">
+            <div>
+              <p class="eyebrow">Around the nest</p>
+              <h2>Campus Life, In Motion</h2>
+            </div>
+            <div class="news-filters" role="group" aria-label="Filter campus updates">
+              <button class="news-filter active" type="button" data-news-filter="all">All</button>
+              <button class="news-filter" type="button" data-news-filter="events">Events</button>
+              <button class="news-filter" type="button" data-news-filter="student-life">Student life</button>
+              <button class="news-filter" type="button" data-news-filter="highlights">Highlights</button>
+            </div>
+          </div>
+
+          <div class="news-layout">
+            <article class="news-feature" data-news-category="events">
+              <img src="pictures/events.jpg" alt="Students gathered for a campus event">
+              <div class="news-copy">
+                <span class="news-tag">Events</span>
+                <h3>Find your people, then find your place.</h3>
+                <p>From campus traditions to everyday hangouts, there is always a new way to get involved.</p>
+              </div>
+            </article>
+            <div class="news-list">
+              <article class="news-item" data-news-category="student-life">
+                <img src="pictures/clubs.avif" alt="Students participating in a club">
+                <div>
+                  <span class="news-tag">Student life</span>
+                  <h3>Make room for a new interest.</h3>
+                  <p>Clubs, games, and shared interests make a close-knit campus feel like home.</p>
+                </div>
+              </article>
+              <article class="news-item" data-news-category="highlights">
+                <img src="pictures/nursing.png" alt="Student working in a nursing lab">
+                <div>
+                  <span class="news-tag">Highlights</span>
+                  <h3>Learn by doing from day one.</h3>
+                  <p>Hands-on experiences connect classroom ideas to the future you are building.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+           STUDENT TESTIMONIAL SECTION
+           Placeholder copy is labeled so it can be replaced with an approved quote.
+           ========================================================= -->
+        <section class="testimonial-section" aria-labelledby="testimonial-title">
+          <div class="testimonial-mark" aria-hidden="true">&ldquo;</div>
+          <div>
+            <p class="eyebrow">Student voice</p>
+            <h2 id="testimonial-title">A place to be known.</h2>
+            <blockquote>
+              <p>[Placeholder testimonial: replace with an approved student or alumni quote.]</p>
+              <cite>[Student name and program placeholder]</cite>
+            </blockquote>
+          </div>
         </section>
 
         <!-- =========================================================
@@ -476,7 +550,6 @@
          Include social links, site map, and contact details if needed.
          ========================================================= -->
     <footer>
-        <!-- place footer here -->
 <section class="final-cta py-5 text-center text-white" id="apply">
   <div class="container py-4">
     <div class="cta-content mx-auto">
@@ -496,6 +569,37 @@
     </div>
   </div>
 </section>
+    <div class="site-footer">
+      <div class="footer-intro">
+        <img class="footer-logo" src="pictures/logo_main.svg" alt="Felician University logo">
+        <p>Close-knit community. Career-focused learning. A short trip from New York City.</p>
+      </div>
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <a href="#programs">Programs</a>
+        <a href="#campus-news">Campus news</a>
+        <a href="#student-life">Student life</a>
+        <a href="#campuses">Campuses</a>
+      </div>
+      <div class="footer-column">
+        <h2>Connect</h2>
+        <a href="https://felician.edu/contact-us/" target="_blank" rel="noopener noreferrer">Contact Felician</a>
+        <a href="https://connect.felician.edu/portal/admissions" target="_blank" rel="noopener noreferrer">Student portal</a>
+        <a href="https://felician.edu/admissions/campus-tours/" target="_blank" rel="noopener noreferrer">Visit campus</a>
+        <span>Phone: [add official number]</span>
+      </div>
+      <div class="footer-column">
+        <h2>Find Us</h2>
+        <span>Rutherford and Lodi, NJ</span>
+        <span>10 miles from NYC</span>
+        <span>Address: [add official campus address]</span>
+        <span>Social links: [add official accounts]</span>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Felician University</span>
+        <span>Golden Falcon family</span>
+      </div>
+    </div>
     </footer>
 
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->

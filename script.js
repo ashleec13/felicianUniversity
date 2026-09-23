@@ -32,6 +32,23 @@ const locationData = {
   }
 };
 
+// Keep anchor scrolling accurate when the wrapped mobile header changes height.
+function initializeNavigation() {
+  const header = document.getElementById("site-header");
+  if (!header) return;
+
+  const updateHeaderOffset = () => {
+    document.documentElement.style.setProperty("--nav-height", `${header.offsetHeight}px`);
+  };
+
+  updateHeaderOffset();
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(updateHeaderOffset).observe(header);
+  } else {
+    window.addEventListener("resize", updateHeaderOffset);
+  }
+}
+
 // Switch the image and description when a nearby location pill is selected.
 function initializeLocationPills() {
   const pills = document.querySelectorAll(".pill");
@@ -41,6 +58,7 @@ function initializeLocationPills() {
   if (!pills.length || !description || !locationImage) return;
 
   pills.forEach((pill) => {
+    // Keep the selected pill, image, alt text, and supporting copy synchronized.
     pill.addEventListener("click", () => {
       const location = locationData[pill.dataset.location];
       if (!location) return;
@@ -56,7 +74,7 @@ function initializeLocationPills() {
 
 // Animate the student-to-professor ratio once it enters the viewport.
 function initializeRatioCounter() {
-  const counter = document.getElementById("studentRatio");
+  const counter = document.getElementById("ratioStudents");
   if (!counter || !("IntersectionObserver" in window)) return;
 
   let started = false;
@@ -69,7 +87,8 @@ function initializeRatioCounter() {
     const stepTime = 1800 / target;
     const countUp = setInterval(() => {
       count += 1;
-      counter.textContent = `${count}:1`;
+      // Only update the number; the fixed ':1' line stays in place while counting.
+      counter.textContent = count;
       if (count === target) clearInterval(countUp);
     }, stepTime);
   });
@@ -84,6 +103,7 @@ function initializeProgramTabs() {
   if (!tabButtons.length || !tabPanels.length) return;
 
   tabButtons.forEach((button) => {
+    // Activate one panel at a time while keeping keyboard tab state accurate.
     button.addEventListener("click", () => {
       const targetTab = button.dataset.tab;
       tabButtons.forEach((tab) => {
@@ -106,6 +126,7 @@ function initializeCampusSwitcher() {
   if (!track || !title || !description || !buttons.length) return;
 
   buttons.forEach((button) => {
+    // Move the shuttle indicator and replace the campus details as one action.
     button.addEventListener("click", () => {
       const campus = campusData[button.dataset.campus];
       if (!campus) return;
@@ -117,9 +138,55 @@ function initializeCampusSwitcher() {
   });
 }
 
+// Search visible page copy and move focus to the first matching section.
+function initializeSiteSearch() {
+  const form = document.getElementById("siteSearch");
+  const input = document.getElementById("siteSearchInput");
+  const status = document.getElementById("searchStatus");
+  if (!form || !input || !status) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = input.value.trim().toLowerCase();
+    if (!query) return;
+
+    const searchableContent = document.querySelectorAll("main h1, main h2, main h3, main p");
+    const match = [...searchableContent].find((element) => element.textContent.toLowerCase().includes(query));
+    if (match) {
+      match.scrollIntoView({ behavior: "smooth", block: "center" });
+      status.textContent = `Found ${query}.`;
+      input.removeAttribute("aria-invalid");
+    } else {
+      status.textContent = `No results found for ${query}.`;
+      input.setAttribute("aria-invalid", "true");
+    }
+  });
+}
+
+// Filter the editorial cards without changing their reserved grid dimensions.
+function initializeNewsFilters() {
+  const buttons = document.querySelectorAll("[data-news-filter]");
+  const cards = document.querySelectorAll("[data-news-category]");
+  if (!buttons.length || !cards.length) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.newsFilter;
+      buttons.forEach((item) => item.classList.toggle("active", item === button));
+      cards.forEach((card) => {
+        card.hidden = filter !== "all" && card.dataset.newsCategory !== filter;
+      });
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize each independent interaction after all page markup is available.
+  initializeNavigation();
   initializeLocationPills();
   initializeRatioCounter();
   initializeProgramTabs();
   initializeCampusSwitcher();
+  initializeSiteSearch();
+  initializeNewsFilters();
 });

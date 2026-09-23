@@ -17,6 +17,7 @@
   --font-heading: "montserrat", Arial, sans-serif;
   --font-body: "source-sans-3", Arial, sans-serif;
   --font-label: "josefin-sans", Arial, sans-serif;
+  --nav-height: 76px;
 }
 
 * {
@@ -30,6 +31,15 @@ body {
   color: var(--brand-ink);
   font-family: var(--font-body);
   line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 1rem);
+}
+
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 /* Use the project font families consistently by content type. */
@@ -74,8 +84,10 @@ a {
   padding: 1rem clamp(1.25rem, 5vw, 4.5rem);
   color: #fff;
   box-shadow: 0 4px 20px rgba(16, 59, 38, 0.18);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 5;
+  isolation: isolate;
 }
 
 .site-logo {
@@ -95,6 +107,45 @@ a {
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.site-search {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 0 0 auto;
+}
+
+.site-search input {
+  width: 5.75rem;
+  min-height: 2.2rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(247, 241, 220, 0.5);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font: 0.8rem var(--font-label);
+}
+
+.site-search input::placeholder {
+  color: rgba(247, 241, 220, 0.8);
+}
+
+.site-search button {
+  min-height: 2.2rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--brand-gold);
+  border-radius: 999px;
+  background: var(--brand-gold);
+  color: var(--brand-green);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.site-search input:focus-visible,
+.site-search button:focus-visible {
+  outline: 2px solid var(--brand-cream);
+  outline-offset: 2px;
 }
 
 .nav-links a:hover,
@@ -197,7 +248,7 @@ a {
    Add styles for Why Felician, Programs, Student Life, etc.
    ============================================================ */
 .content-section {
-  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 8vw, 8rem);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 8vw, 8rem);
   background-color: var(--brand-light);
 }
 
@@ -206,6 +257,7 @@ a {
   color: var(--brand-green);
   font-family: var(--font-display);
   font-size: clamp(2.3rem, 4vw, 3.6rem);
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
@@ -223,6 +275,14 @@ a {
   background-color: var(--brand-white);
   box-shadow: 0 14px 32px rgba(16, 59, 38, 0.14);
   overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.news-feature:hover,
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(16, 59, 38, 0.2);
 }
 
 .card-img-top {
@@ -261,6 +321,7 @@ a {
 }
 
 #locationDescription {
+  min-height: 3.5rem;
   margin-bottom: 0;
 }
 
@@ -274,14 +335,36 @@ a {
 }
 
 .stat-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 9.5rem;
+  font-variant-numeric: tabular-nums;
   color: var(--brand-gold);
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 6vw, 5rem);
   font-weight: bold;
+  line-height: 0.82;
+}
+
+.ratio-divider {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+#ratioStudents {
+  min-width: 2ch;
+  text-align: center;
 }
 
 .stat p {
-  font-size: 18px;
+  max-width: 12rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
   color: var(--brand-white);
 }
 
@@ -292,7 +375,7 @@ a {
    ============================================================ */
 .programs-section {
   background-color: var(--brand-cream);
-  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 8vw, 8rem);
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 8vw, 8rem);
 }
 
 .programs-container {
@@ -306,6 +389,7 @@ a {
   color: var(--brand-green);
   font-family: var(--font-display);
   font-size: clamp(2.3rem, 4vw, 3.6rem);
+  font-weight: 800;
   text-align: center;
 }
 
@@ -322,7 +406,7 @@ a {
   justify-content: center;
   gap: 3rem;
   border-bottom: 1px solid var(--brand-border);
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .tab-btn {
@@ -344,6 +428,7 @@ a {
 .tab-btn.active {
   color: var(--brand-green);
   font-weight: 700;
+  background-color: rgba(229, 193, 104, 0.16);
 }
 
 /* Active Gold Underline Indicator */
@@ -428,7 +513,7 @@ a {
   font-size: 1rem;
   line-height: 1.55;
   color: var(--brand-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Stats Section Grid */
@@ -547,7 +632,7 @@ a {
 /* Student-life image gallery keeps the existing collage layout. */
 .student-life-gallery {
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2.5rem;
 }
 
 .student-life-gallery .sketch-font {
@@ -559,7 +644,12 @@ a {
 }
 
 .card-overlay {
-  background: rgba(16, 59, 38, 0.35);
+  background: linear-gradient(180deg, rgba(16, 59, 38, 0.12) 0%, rgba(16, 59, 38, 0.5) 100%);
+  transition: background 0.25s ease;
+}
+
+.student-life-gallery .position-relative:hover .card-overlay {
+  background: linear-gradient(180deg, rgba(16, 59, 38, 0.2) 0%, rgba(16, 59, 38, 0.58) 100%);
 }
 /* ============================================================
    CAMPUS SHUTTLE TOGGLE SECTION
@@ -599,7 +689,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2.5rem 0 1.5rem;
+  margin: 1.75rem 0 1rem;
   padding: 0 0.5rem;
 }
 
@@ -726,6 +816,317 @@ a {
   }
 }
 
+/* ============================================================
+   CAMPUS NEWS / TESTIMONIAL / FOOTER
+   Editorial content bands share the same spacing, shadows, and palette.
+   ============================================================ */
+.campus-news-section {
+  padding: clamp(2.75rem, 5vw, 4.5rem) clamp(1.25rem, 8vw, 8rem);
+  background: var(--brand-cream);
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1120px;
+  margin: 0 auto 1.75rem;
+}
+
+.section-heading-row h2,
+.testimonial-section h2 {
+  margin: 0;
+  color: var(--brand-green);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--brand-amber);
+  font: 700 0.75rem var(--font-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.news-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.news-filter {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--brand-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--brand-muted);
+  cursor: pointer;
+  font: 700 0.78rem var(--font-label);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.news-filter:hover,
+.news-filter.active,
+.news-filter:focus-visible {
+  background: var(--brand-green);
+  color: var(--brand-white);
+  transform: translateY(-2px);
+}
+
+.news-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 1rem;
+  max-width: 1120px;
+  min-height: 390px;
+  margin: 0 auto;
+}
+
+.news-feature,
+.news-item {
+  overflow: hidden;
+  border: 1px solid var(--brand-border);
+  border-radius: 12px;
+  background: var(--brand-light);
+  box-shadow: 0 10px 24px rgba(16, 59, 38, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-feature {
+  position: relative;
+  min-height: 390px;
+  background: var(--brand-green);
+}
+
+.news-feature::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 59, 38, 0.05), rgba(16, 59, 38, 0.85));
+  content: "";
+}
+
+.news-feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-copy {
+  position: absolute;
+  right: clamp(1.25rem, 4vw, 2.5rem);
+  bottom: clamp(1.25rem, 4vw, 2.5rem);
+  left: clamp(1.25rem, 4vw, 2.5rem);
+  z-index: 1;
+  color: var(--brand-white);
+}
+
+.news-copy h3,
+.news-item h3 {
+  margin: 0.35rem 0 0.5rem;
+  color: inherit;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.news-copy p,
+.news-item p {
+  margin: 0;
+  color: inherit;
+  opacity: 0.88;
+}
+
+.news-list {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  min-height: 0;
+}
+
+.news-item img {
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+  object-fit: cover;
+}
+
+.news-item > div {
+  padding: 1.25rem;
+}
+
+.news-tag {
+  color: var(--brand-amber);
+  font: 700 0.72rem var(--font-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.testimonial-section {
+  display: grid;
+  grid-template-columns: auto minmax(0, 680px);
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 8vw, 8rem);
+  background: var(--brand-green);
+  color: var(--brand-white);
+}
+
+.testimonial-section h2 {
+  color: var(--brand-gold);
+}
+
+.testimonial-section .eyebrow {
+  color: var(--brand-gold);
+}
+
+.testimonial-mark {
+  color: var(--brand-gold);
+  font: 900 clamp(5rem, 12vw, 9rem)/0.7 var(--font-display);
+}
+
+.testimonial-section blockquote {
+  max-width: 600px;
+  margin: 1rem 0 0;
+}
+
+.testimonial-section blockquote p {
+  margin-bottom: 0.75rem;
+  color: var(--brand-white);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.testimonial-section cite {
+  color: rgba(247, 241, 220, 0.7);
+  font: 0.8rem var(--font-label);
+  font-style: normal;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 2rem;
+  padding: 3rem clamp(1.25rem, 8vw, 8rem) 1.5rem;
+  background: #0b2b1b;
+  color: var(--brand-white);
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+.footer-intro p,
+.footer-column span,
+.footer-column a {
+  display: block;
+  max-width: 240px;
+  margin-bottom: 0.55rem;
+  color: rgba(247, 241, 220, 0.72);
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.footer-column a:hover,
+.footer-column a:focus-visible {
+  color: var(--brand-gold);
+}
+
+.footer-column h2 {
+  margin-bottom: 0.8rem;
+  color: var(--brand-gold);
+  font: 700 0.8rem var(--font-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(229, 193, 104, 0.25);
+  color: rgba(247, 241, 220, 0.58);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  .site-search {
+    order: 3;
+    width: 100%;
+  }
+
+  .site-search input {
+    flex: 1;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .news-filters {
+    justify-content: flex-start;
+  }
+
+  .site-footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-intro {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .news-layout {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .news-feature {
+    min-height: 320px;
+  }
+
+  .news-list {
+    grid-template-rows: auto;
+  }
+
+  .news-item {
+    min-height: 170px;
+  }
+
+  .testimonial-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .testimonial-mark {
+    font-size: 5rem;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
 
 
 /* Admissions step navigation uses the same green and gold brand colors. */
@@ -760,7 +1161,7 @@ a {
 .final-cta {
   background-color: var(--brand-green);
   color: #ffffff;
-  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -821,7 +1222,7 @@ a {
   gap: 1.5rem;
   align-items: stretch;
   background-color: var(--brand-light);
-  grid-template-rows: auto auto minmax(440px, 1fr);
+  grid-template-rows: auto auto minmax(380px, auto);
 }
 
 #why-felician > h2 {
@@ -855,13 +1256,13 @@ a {
 #why-felician .opportunities-card {
   width: 100%;
   height: 100%;
-  min-height: 440px;
+  min-height: 380px;
 }
 
 #why-felician .ratio-stat,
 #why-felician .opportunities-card .card-body,
 #why-felician .location-card .card-body {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 #why-felician .ratio-stat {
@@ -874,7 +1275,19 @@ a {
 #why-felician .opportunities-card .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+#why-felician .location-card .card-img-top {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+#why-felician .opportunities-card .card-text {
+  margin-bottom: 0;
+  line-height: 1.8;
 }
 
 #why-felician .card-title {
@@ -896,6 +1309,7 @@ a {
 
 #student-life h2 {
   color: var(--brand-gold);
+  font-weight: 800;
 }
 
 #student-life p {
@@ -919,8 +1333,14 @@ a {
 }
 
 .student-life-gallery .position-relative {
-  border: 3px solid var(--brand-white);
+  border: 2px solid rgba(247, 245, 237, 0.82);
   box-shadow: 0 12px 24px rgba(16, 59, 38, 0.18) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.student-life-gallery .position-relative:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px rgba(16, 59, 38, 0.26) !important;
 }
 
 #campuses {
@@ -931,6 +1351,7 @@ a {
 
 #campuses h2 {
   color: var(--brand-green);
+  font-weight: 800;
 }
 
 #campuses p {
@@ -940,9 +1361,9 @@ a {
 
 .campus-card {
   max-width: 980px;
-  margin: 2rem auto 4rem;
+  margin: 1.5rem auto 2.5rem;
   padding: clamp(1.5rem, 4vw, 3rem);
-  border: 6px solid var(--brand-gold);
+  border: 3px solid var(--brand-border);
   border-radius: 24px;
   background-color: var(--brand-green);
   box-shadow: 0 18px 36px rgba(16, 59, 38, 0.2);
@@ -965,6 +1386,10 @@ a {
   background-color: var(--brand-green);
 }
 
+.campus-card .header p {
+  margin-bottom: 1rem;
+}
+
 .campus-card .track-wrapper {
   min-height: 72px;
 }
@@ -974,7 +1399,7 @@ a {
 }
 
 .admissions-section {
-  padding: clamp(3rem, 7vw, 6rem) 0;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
 }
 
 .bg-white {
@@ -985,6 +1410,11 @@ a {
   color: var(--brand-green);
   font-family: var(--font-display);
   font-size: clamp(2.3rem, 5vw, 4rem);
+  font-weight: 800;
+}
+
+.admissions-section > .container > .text-center {
+  margin-bottom: 2rem !important;
 }
 
 .admissions-section > .container > .text-center p {
@@ -1034,7 +1464,7 @@ a {
 }
 
 .final-cta {
-  border-top: 8px solid var(--brand-gold);
+  border-top: 4px solid var(--brand-gold);
 }
 
 .final-cta h2 {
@@ -1055,7 +1485,7 @@ a {
       "intro intro"
       "location ratio"
       "opportunities opportunities";
-    grid-template-rows: auto auto minmax(440px, 1fr) minmax(440px, 1fr);
+    grid-template-rows: auto auto minmax(380px, 1fr) minmax(380px, 1fr);
   }
 }
 
@@ -1073,7 +1503,7 @@ a {
   #why-felician .location-card,
   #why-felician .ratio-stat,
   #why-felician .opportunities-card {
-    min-height: 380px;
+    min-height: 360px;
   }
 
   .campus-card {
