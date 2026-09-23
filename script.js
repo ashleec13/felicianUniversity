@@ -49,6 +49,33 @@ function initializeNavigation() {
   }
 }
 
+// Toggle the compact mobile navigation and close it after an anchor is selected.
+function initializeMobileNavigation() {
+  const toggle = document.querySelector(".nav-toggle");
+  const navigation = document.getElementById("primary-navigation");
+  if (!toggle || !navigation) return;
+
+  const setOpen = (isOpen) => {
+    navigation.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.querySelector(".visually-hidden").textContent = isOpen
+      ? "Close navigation"
+      : "Open navigation";
+  };
+
+  toggle.addEventListener("click", () => {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  navigation.querySelectorAll("a[href^='#']").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) setOpen(false);
+  });
+}
+
 // Switch the image and description when a nearby location pill is selected.
 function initializeLocationPills() {
   const pills = document.querySelectorAll(".pill");
@@ -111,7 +138,10 @@ function initializeProgramTabs() {
         tab.setAttribute("aria-selected", String(tab === button));
       });
       tabPanels.forEach((panel) => {
-        panel.classList.toggle("active", panel.id === targetTab);
+        const isActive = panel.id === targetTab;
+        panel.classList.toggle("active", isActive);
+        panel.hidden = !isActive;
+        panel.setAttribute("aria-hidden", String(!isActive));
       });
     });
   });
@@ -134,6 +164,9 @@ function initializeCampusSwitcher() {
       track.dataset.active = button.dataset.campus;
       title.textContent = campus.title;
       description.textContent = campus.description;
+      buttons.forEach((campusButton) => {
+        campusButton.setAttribute("aria-pressed", String(campusButton === button));
+      });
     });
   });
 }
@@ -141,6 +174,7 @@ function initializeCampusSwitcher() {
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize each independent interaction after all page markup is available.
   initializeNavigation();
+  initializeMobileNavigation();
   initializeLocationPills();
   initializeRatioCounter();
   initializeProgramTabs();
