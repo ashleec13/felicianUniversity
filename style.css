@@ -12,7 +12,7 @@
   --brand-border: #e2dfd2;
   --brand-lime: #79bf20;
   --brand-amber: #c8981a;
-  --brand-white: #ffffff;
+  --brand-white: #f7f1dc;
   --font-display: "bodoni-moda-variable", Georgia, serif;
   --font-heading: "montserrat", Arial, sans-serif;
   --font-body: "source-sans-3", Arial, sans-serif;
@@ -26,7 +26,7 @@
 }
 
 body {
-  background-color: var(--brand-cream);
+  background-color: var(--brand-green);
   color: var(--brand-ink);
   font-family: var(--font-body);
   line-height: 1.5;
@@ -122,7 +122,7 @@ a {
 
 .btn-gold:hover,
 .btn-gold:focus-visible {
-  background-color: var(--brand-white);
+  background-color: var(--brand-cream);
   color: var(--brand-green);
   transform: translateY(-2px);
 }
@@ -240,7 +240,7 @@ a {
 .pill {
   border: 2px solid var(--brand-green);
   border-radius: 999px;
-  background-color: #fff;
+  background-color: var(--brand-cream);
   color: var(--brand-green);
   cursor: pointer;
   font-weight: 700;
@@ -569,7 +569,7 @@ a {
   max-width: 820px;
   margin: 3rem auto;
   padding: 2rem 2.5rem;
-  background: #ffffff;
+  background: var(--brand-cream);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(16, 59, 38, 0.08);
   text-align: center;
@@ -650,7 +650,7 @@ a {
   height: 18px;
   border-radius: 50%;
   border: 2px solid #ccc;
-  background: #fff;
+  background: var(--brand-cream);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -730,7 +730,7 @@ a {
 
 /* Admissions step navigation uses the same green and gold brand colors. */
 .adm-nav .nav-link {
-  background-color: #ffffff;
+  background-color: var(--brand-cream);
   color: var(--brand-ink);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -821,6 +821,7 @@ a {
   gap: 1.5rem;
   align-items: stretch;
   background-color: var(--brand-light);
+  grid-template-rows: auto auto minmax(440px, 1fr);
 }
 
 #why-felician > h2 {
@@ -843,12 +844,37 @@ a {
 
 #why-felician .ratio-stat {
   grid-area: ratio;
-  align-self: center;
 }
 
 #why-felician .opportunities-card {
   grid-area: opportunities;
-  align-self: center;
+}
+
+#why-felician .location-card,
+#why-felician .ratio-stat,
+#why-felician .opportunities-card {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+}
+
+#why-felician .ratio-stat,
+#why-felician .opportunities-card .card-body,
+#why-felician .location-card .card-body {
+  padding: 2rem;
+}
+
+#why-felician .ratio-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#why-felician .opportunities-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #why-felician .card-title {
@@ -879,7 +905,11 @@ a {
 
 .student-life-gallery {
   max-width: 1440px;
-  background-color: var(--brand-cream);
+  background-color: var(--brand-light);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: clamp(1.25rem, 6vw, 6rem);
+  padding-right: clamp(1.25rem, 6vw, 6rem);
 }
 
 .student-life-gallery h1 {
@@ -910,7 +940,7 @@ a {
 
 .campus-card {
   max-width: 980px;
-  margin: 0 auto 4rem;
+  margin: 2rem auto 4rem;
   padding: clamp(1.5rem, 4vw, 3rem);
   border: 6px solid var(--brand-gold);
   border-radius: 24px;
@@ -919,20 +949,10 @@ a {
   color: var(--brand-white);
 }
 
-.campus-card .header h2,
 .campus-card .header p,
 .campus-card .details-box h3,
 .campus-card .details-box p {
   color: var(--brand-white);
-}
-
-.campus-card .header h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.campus-card .header .highlight {
-  color: var(--brand-gold);
 }
 
 .campus-card .label,
@@ -955,6 +975,10 @@ a {
 
 .admissions-section {
   padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.bg-white {
+  background-color: var(--brand-cream) !important;
 }
 
 .admissions-section > .container > .text-center h2 {
@@ -1031,6 +1055,7 @@ a {
       "intro intro"
       "location ratio"
       "opportunities opportunities";
+    grid-template-rows: auto auto minmax(440px, 1fr) minmax(440px, 1fr);
   }
 }
 
@@ -1043,6 +1068,12 @@ a {
   #why-felician > h2,
   #why-felician > p:first-of-type {
     text-align: left;
+  }
+
+  #why-felician .location-card,
+  #why-felician .ratio-stat,
+  #why-felician .opportunities-card {
+    min-height: 380px;
   }
 
   .campus-card {
