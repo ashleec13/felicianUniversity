@@ -13,8 +13,7 @@
   --brand-lime: #79bf20;
   --brand-amber: #72540d;
   --brand-white: #f1dfae;
-  --font-display: "bodoni-moda-variable", Georgia, serif;
-  --font-heading: "montserrat", Arial, sans-serif;
+  --font-heading: "miller-display", serif;
   --font-body: "source-sans-3", Arial, sans-serif;
   --font-label: "josefin-sans", Arial, sans-serif;
   --nav-height: 76px;
@@ -50,7 +49,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
 }
 
 button,
@@ -210,7 +211,7 @@ a {
 
 .hero-content h1 {
   color: var(--brand-gold);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(3.25rem, 7vw, 6rem);
   line-height: 0.95;
   font-weight: 900;
@@ -280,7 +281,7 @@ a {
 .content-section h2 {
   font-size: 2.2rem;
   color: var(--brand-green);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(2.3rem, 4vw, 3.6rem);
   font-weight: 800;
   margin-bottom: 1rem;
@@ -367,7 +368,7 @@ a {
   min-height: 9.5rem;
   font-variant-numeric: tabular-nums;
   color: var(--brand-gold);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(3.2rem, 6vw, 5rem);
   font-weight: bold;
   line-height: 0.82;
@@ -412,7 +413,7 @@ a {
 .programs-heading {
   margin-bottom: 0.5rem;
   color: var(--brand-green);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(2.3rem, 4vw, 3.6rem);
   font-weight: 800;
   text-align: center;
@@ -695,7 +696,7 @@ a {
 }
 
 .student-life-gallery .sketch-font {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
 }
 
 .gallery-row {
@@ -903,7 +904,7 @@ a {
 .testimonial-section h2 {
   margin: 0;
   color: var(--brand-green);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 800;
   line-height: 1;
@@ -1029,7 +1030,7 @@ a {
 
 .testimonial-mark {
   color: var(--brand-gold);
-  font: 900 clamp(5rem, 12vw, 9rem)/0.7 var(--font-display);
+  font: 400 clamp(5rem, 12vw, 9rem)/0.7 var(--font-heading);
 }
 
 .testimonial-section blockquote {
@@ -1349,7 +1350,7 @@ a {
 
 #why-felician .card-title {
   color: var(--brand-green);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1.7rem;
 }
 
@@ -1385,7 +1386,7 @@ a {
 
 .student-life-gallery h2 {
   color: var(--brand-gold) !important;
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(2.3rem, 5vw, 4rem);
 }
 
@@ -1466,7 +1467,7 @@ a {
 
 .admissions-section > .container > .text-center h2 {
   color: var(--brand-gold);
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: clamp(2.3rem, 5vw, 4rem);
   font-weight: 800;
 }
@@ -1534,7 +1535,7 @@ a {
 }
 
 .final-cta h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
 }
 
 .final-cta .btn-warning {
